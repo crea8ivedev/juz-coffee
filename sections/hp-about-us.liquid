@@ -1,0 +1,197 @@
+<div class="{{ section.settings.extra_class }} about-us-main-hp">
+  <div class="ctm-about-bg" style="background-image: url({{ section.settings.background_image | image_url }});">
+    <div class="about-head-icon-main">
+      {% if section.settings.caption_image != blank %}
+        <img
+          src="{{ section.settings.caption_image | image_url }}"
+          height="auto"
+          width="auto"
+          alt="Caption Image"
+          class="caption-img"
+        >
+      {% endif %}
+
+      {% if section.settings.caption_text != blank %}
+        <h4 class="caption-text">{{ section.settings.caption_text }}</h4>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <div class="about-heading">{{ section.settings.heading }}</div>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="about-description">{{ section.settings.description }}</div>
+      {% endif %}
+
+      <div class="beverage-icons">
+        {% for block in section.blocks %}
+          {% if block.type == 'beverage_text' %}
+            <div class="beverage-block">
+              {% if block.settings.beverage_icon != blank %}
+                <img src="{{ block.settings.beverage_icon | image_url }}" height="auto" width="auto" alt="Icon">
+              {% endif %}
+              {% if block.settings.beverage_heading != blank %}
+                <h5>{{ block.settings.beverage_heading }}</h5>
+              {% endif %}
+              {% if block.settings.beverage_description != blank %}
+                <div>{{ block.settings.beverage_description }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if section.settings.about_btn_text and section.settings.about_btn_url %}
+        <a href="{{ section.settings.about_btn_url }}" class="about-btn">
+          {{ section.settings.about_btn_text }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.video_play_button != blank %}
+        <div class="video-play">
+          <img src="{{ section.settings.video_play_button | image_url }}" height="auto" width="auto" alt="Play Button">
+          {% if section.settings.video_play_button_text %}
+            <span>{{ section.settings.video_play_button_text }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ctm-about-hours">
+      {% for block in section.blocks %}
+        {% if block.type == 'open_hours' %}
+          <div class="hours-block">
+            {% if block.settings.clock_image != blank %}
+              <img src="{{ block.settings.clock_image | image_url }}" height="auto" width="auto" alt="Clock">
+            {% endif %}
+            {% if block.settings.open_hours_heading != blank %}
+              <h5>{{ block.settings.open_hours_heading }}</h5>
+            {% endif %}
+            {% if block.settings.open_hours_description != blank %}
+              <div>{{ block.settings.open_hours_description }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ctm-about-image">
+      {% if section.settings.about_image != blank %}
+        <img src="{{ section.settings.about_image | image_url }}" height="auto" width="auto" alt="About Image">
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hp About Us",
+  "class": "ctm-hp-about-main",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Extra Class",
+      "id": "extra_class"
+    },
+    {
+      "type": "image_picker",
+      "label": "Background Image",
+      "id": "background_image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Caption Image",
+      "id": "caption_image"
+    },
+    {
+      "type": "text",
+      "label": "Caption Text",
+      "id": "caption_text"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description"
+    },
+    {
+      "type": "text",
+      "label": "About BTN Text",
+      "id": "about_btn_text"
+    },
+    {
+      "type": "url",
+      "label": "About BTN URL",
+      "id": "about_btn_url"
+    },
+    {
+      "type": "image_picker",
+      "label": "Video Play Button",
+      "id": "video_play_button"
+    },
+    {
+      "type": "text",
+      "label": "Video Play Button Text",
+      "id": "video_play_button_text"
+    },
+    {
+      "type": "image_picker",
+      "label": "About Image",
+      "id": "about_image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "beverage_text",
+      "name": "Beverage Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Beverage Icon",
+          "id": "beverage_icon"
+        },
+        {
+          "type": "text",
+          "label": "Beverage Heading",
+          "id": "beverage_heading"
+        },
+        {
+          "type": "richtext",
+          "label": "Beverage Description",
+          "id": "beverage_description"
+        }
+      ]
+    },
+    {
+      "type": "open_hours",
+      "name": "Open Hours",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Clock Image",
+          "id": "clock_image"
+        },
+        {
+          "type": "text",
+          "label": "Open Hours Heading",
+          "id": "open_hours_heading"
+        },
+        {
+          "type": "html",
+          "label": "Open Hours Description",
+          "id": "open_hours_description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hp About Us"
+    }
+  ]
+}
+{% endschema %}

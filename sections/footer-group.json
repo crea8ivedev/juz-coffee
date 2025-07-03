@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -7,13 +16,15 @@
       "blocks": {
         "footer-0": {
           "type": "link_list",
+          "disabled": true,
           "settings": {
-            "heading": "Quick links",
+            "heading": "<strong>CONTACT US</strong>",
             "menu": "footer"
           }
         },
         "footer-1": {
           "type": "link_list",
+          "disabled": true,
           "settings": {
             "heading": "Info",
             "menu": "footer"
@@ -22,16 +33,46 @@
         "footer-2": {
           "type": "text",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "footer-block-image": "shopify://shop_images/SVG.svg",
+            "heading": "<strong>CONTACT US</strong>",
+            "subtext": "<p>T. +123 456 789M.<br/>info@domainname.com</p>",
+            "footer-block-btn-text": "Contact Us",
+            "footer-block-btn-url": "shopify://pages/contact"
+          }
+        },
+        "text_AJiMLK": {
+          "type": "text",
+          "settings": {
+            "footer-block-image": "shopify://shop_images/SVG_1.svg",
+            "heading": "<strong>ADDRESS</strong>",
+            "subtext": "<p>29721 Westheimer Road, Santa Ana,Illinois 85486</p>",
+            "footer-block-btn-text": "Get Direction",
+            "footer-block-btn-url": "shopify://pages/test"
+          }
+        },
+        "text_L4GwNE": {
+          "type": "text",
+          "settings": {
+            "footer-block-image": "shopify://shop_images/SVG_2.svg",
+            "heading": "<strong>OPENING HOURS</strong>",
+            "subtext": "<p>Everyday: From 12.30 To 23.00<br/>Kitchen Closes At 22.00</p>",
+            "footer-block-btn-text": "Reserve A Table",
+            "footer-block-btn-url": "shopify://pages/test"
           }
         }
       },
-      "block_order": ["footer-0", "footer-1", "footer-2"],
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "footer-2",
+        "text_AJiMLK",
+        "text_L4GwNE"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
@@ -43,5 +84,7 @@
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }

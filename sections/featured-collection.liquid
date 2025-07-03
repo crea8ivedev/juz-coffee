@@ -92,7 +92,11 @@
         </div>
       {%- endif -%}
     </div>
-
+    {% if section.settings.shop_button_text != blank %}
+      <div class="ctm-shop-btn">
+        <a href="{{ section.settings.shop_button_url }}">{{ section.settings.shop_button_text }}</a>
+      </div>
+    {% endif %}
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider ==  false %} page-width{% endif %}{% if show_desktop_slider ==  false and section.settings.full_width ==  false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
@@ -275,6 +279,16 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text",
+      "label": "Shop Button Text",
+      "id": "shop_button_text"
+    },
+    {
+      "type": "url",
+      "label": "Shop button URL",
+      "id": "shop_button_url"
     },
     {
       "type": "richtext",

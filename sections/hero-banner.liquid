@@ -1,0 +1,174 @@
+{% # theme-check-disable %}
+
+<div class="hero-banner-section {{ section.settings.class_name }}">
+  <div class="hero-banner-media">
+    {% if section.settings.banner_video != blank %}
+      <video autoplay muted loop playsinline class="w-full h-auto object-cover">
+        <source src="{{ section.settings.banner_video | video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% elsif section.settings.banner_image != blank %}
+      <img
+        src="{{ section.settings.banner_image | image_url }}"
+        height="auto"
+        width="auto"
+        alt="Hero Banner Image"
+        class="w-full h-auto object-cover"
+      >
+    {% endif %}
+  </div>
+
+  <div class="hero-banner-content container mx-auto relative z-10 text-center py-12">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'coffee_mug' %}
+          {% if block.settings.coffee_mug_image != blank %}
+            <div class="coffee-mug mb-4">
+              <img
+                src="{{ block.settings.coffee_mug_image | image_url }}"
+                height="auto"
+                width="auto"
+                alt="Coffee Mug"
+                class="mx-auto"
+              >
+            </div>
+          {% endif %}
+          {% if block.settings.coffee_mug_caption != blank %}
+            <p class="coffee-mug-caption text-sm text-gray-700">{{ block.settings.coffee_mug_caption }}</p>
+          {% endif %}
+
+        {% when 'text_content' %}
+          {% if block.settings.banner != blank %}
+            <div class="banner-text mb-4 text-4xl font-bold">
+              {{ block.settings.banner }}
+            </div>
+          {% endif %}
+          {% if block.settings.description != blank %}
+            <div class="banner-description mb-6 text-lg text-gray-600">
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+
+        {% when 'shop_button' %}
+          {% if block.settings.shop_button_text != blank and block.settings.shop_button_url != blank %}
+            <a
+              href="{{ block.settings.shop_button_url }}"
+              class="inline-block bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition mb-4"
+            >
+              {{ block.settings.shop_button_text }}
+            </a>
+          {% endif %}
+
+        {% when 'point_button' %}
+          {% if block.settings.point_button_text != blank and block.settings.point_button_url != blank %}
+            <a
+              href="{{ block.settings.point_button_url }}"
+              class="inline-block border border-black text-black px-6 py-3 rounded hover:bg-black hover:text-white transition"
+            >
+              {{ block.settings.point_button_text }}
+            </a>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "class": "ctm-hero-banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "class_name",
+      "label": "Extra Class"
+    },
+    {
+      "type": "header",
+      "content": "Use Either Banner Video or Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Banner Image",
+      "id": "banner_image"
+    },
+    {
+      "type": "video",
+      "label": "Banner Video",
+      "id": "banner_video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "coffee_mug",
+      "name": "Coffee Mug",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Coffee Mug Image",
+          "id": "coffee_mug_image"
+        },
+        {
+          "type": "text",
+          "label": "Coffee Mug Caption",
+          "id": "coffee_mug_caption"
+        }
+      ]
+    },
+    {
+      "type": "text_content",
+      "name": "Text Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "label": "Banner",
+          "id": "banner"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description"
+        }
+      ]
+    },
+    {
+      "type": "shop_button",
+      "name": "Shop Button",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Shop Button Text",
+          "id": "shop_button_text"
+        },
+        {
+          "type": "url",
+          "label": "Shop Button URL",
+          "id": "shop_button_url"
+        }
+      ]
+    },
+    {
+      "type": "point_button",
+      "name": "Point Button",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Point Button Text",
+          "id": "point_button_text"
+        },
+        {
+          "type": "url",
+          "label": "Point Button URL",
+          "id": "point_button_url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,61 @@
+<div class="ctm_benefit_with_icon {{ section.settings.extra_class }}">
+  <div class="ctm_inner_benefits">
+    {% for block in section.blocks %}
+      <div class="ctm_benefits_icon">
+        <img
+          src="{{ block.settings.benefits-image | image_url }}"
+          alt="Hero Banner Image"
+          width="40"
+          height="40"
+          class="h-auto object-cover"
+        >
+      </div>
+      <div class="ctm_benefits_content">
+        <h2>{{ block.settings['benefits-title'] }}</h2>
+        <p>{{ block.settings['benefit-subtitle'] }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon With Benefit",
+  "class": "icon-with-benefits-sec",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Extra Class",
+      "id": "extra_class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefits",
+      "name": "Benefits",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "benefits-title"
+        },
+        {
+          "type": "text",
+          "label": "SubTitle",
+          "id": "benefit-subtitle"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "benefits-image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefit With Icon"
+    }
+  ]
+}
+{% endschema %}

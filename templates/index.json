@@ -1,195 +1,272 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero_banner_VjiGJG": {
+      "type": "hero-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "coffee_mug_TXzYFW": {
+          "type": "coffee_mug",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "coffee_mug_image": "shopify://shop_images/Cup.svg",
+            "coffee_mug_caption": "Crafted With Love, Served With Passion"
           }
         },
-        "text": {
-          "type": "text",
+        "text_content_EKyt3E": {
+          "type": "text_content",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "banner": "<p>Just the Coffee You Need, Exactly When You Need It.</p>",
+            "description": "<p>Discover a place where every cup is a masterpiece, crafted with passion and precision. From the rich, bold flavors of our signature blends to the cozy ambiance that feels like home.</p>"
           }
         },
-        "button": {
-          "type": "buttons",
+        "shop_button_RfnXrx": {
+          "type": "shop_button",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "shop_button_text": "Shop Now",
+            "shop_button_url": "#"
+          }
+        },
+        "point_button_9wG6q4": {
+          "type": "point_button",
+          "settings": {
+            "point_button_text": "Earn Points with Every Sip",
+            "point_button_url": "#"
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "coffee_mug_TXzYFW",
+        "text_content_EKyt3E",
+        "shop_button_RfnXrx",
+        "point_button_9wG6q4"
+      ],
+      "name": "Hero Banner",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "class_name": "",
+        "banner_image": "shopify://shop_images/banner.png"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "marquee_66B3pf": {
+      "type": "marquee",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "item_R4wgRr": {
+          "type": "item",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "show_separator": false,
+            "text": "MOCHA"
           }
         },
-        "text": {
-          "type": "text",
+        "item_bMRgjz": {
+          "type": "item",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "show_separator": false,
+            "text": "MACCHIATO"
+          }
+        },
+        "item_pVYCwt": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "COLD BREW"
+          }
+        },
+        "item_3ngNEC": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "ESPRESSO"
+          }
+        },
+        "item_4ByXRW": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "AMERICANO"
+          }
+        },
+        "item_kig4H8": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "LATTE"
+          }
+        },
+        "item_WitLWE": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "HAZELNUT LATTE"
+          }
+        },
+        "item_zGt8yc": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "DOUBLE SHOT"
+          }
+        },
+        "item_LQ9yJG": {
+          "type": "item",
+          "settings": {
+            "show_separator": false,
+            "text": "CAPPUCCINO"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "item_R4wgRr",
+        "item_bMRgjz",
+        "item_pVYCwt",
+        "item_3ngNEC",
+        "item_4ByXRW",
+        "item_kig4H8",
+        "item_WitLWE",
+        "item_zGt8yc",
+        "item_LQ9yJG"
+      ],
+      "name": "Marquee",
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "extra_class": ""
       }
     },
-    "featured_collection": {
+    "hp_about_us_f49zKr": {
+      "type": "hp-about-us",
+      "blocks": {
+        "beverage_text_qgXAjT": {
+          "type": "beverage_text",
+          "settings": {
+            "beverage_icon": "shopify://shop_images/cup_with_coaster.svg",
+            "beverage_heading": "Food Delivery",
+            "beverage_description": "<p>With our fast and reliable food delivery service, your favoritecoffee, snacks, and treats are just a click away.</p>"
+          }
+        },
+        "beverage_text_LHkrgh": {
+          "type": "beverage_text",
+          "settings": {
+            "beverage_icon": "shopify://shop_images/Mug.svg",
+            "beverage_heading": "Event Elegance",
+            "beverage_description": "<p>Host your special moments with us! From intimate gatherings to vibrant celebrations offers.</p>"
+          }
+        },
+        "open_hours_K9x8y6": {
+          "type": "open_hours",
+          "settings": {
+            "clock_image": "shopify://shop_images/Clock.svg",
+            "open_hours_heading": "Open Hours",
+            "open_hours_description": "<table>\n<tbody>\n<tr>\n<td>Monday - Friday</td>\n<td>09:30 - 7:30</td>\n</tr>\n<tr>\n<td>Saturday</td>\n<td>10:30 - 5:00</td>\n</tr>\n<tr>\n<td>Sunday</td>\n<td>24 hours open</td>\n</tr>\n</tbody>\n</table>"
+          }
+        }
+      },
+      "block_order": [
+        "beverage_text_qgXAjT",
+        "beverage_text_LHkrgh",
+        "open_hours_K9x8y6"
+      ],
+      "name": "Hp About Us",
+      "settings": {
+        "extra_class": "",
+        "caption_image": "shopify://shop_images/Red_cup.svg",
+        "caption_text": "About Us",
+        "heading": "<h2>Just the Coffee You Need, Exactly When You Need It.</h2>",
+        "description": "<p>Number of ways to create a new art of Coffee with your friends. Just demand, we in a minute provide a variety of coffee. Experience a new flavour.</p>",
+        "about_btn_text": "More About Us",
+        "about_btn_url": "#",
+        "video_play_button": "shopify://shop_images/Red_Play.svg",
+        "video_play_button_text": "Watch Video",
+        "about_image": "shopify://shop_images/about_us_image.png"
+      }
+    },
+    "featured_collection_xeMGGL": {
       "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "title": "Popular Products",
+        "heading_size": "h1",
+        "shop_button_text": "",
+        "shop_button_url": "",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
         "image_ratio": "adapt",
-        "show_secondary_image": true,
+        "image_shape": "default",
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": ["collection-0", "product", "collection-1"],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": ["column1", "column2", "column3"],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "benefit_with_icon_W4VP6N": {
+      "type": "benefit-with-icon",
+      "blocks": {
+        "benefits_y4JjGz": {
+          "type": "benefits",
+          "settings": {
+            "benefits-title": "Fast Delivery",
+            "benefit-subtitle": "Get your coffee next day (selected areas)",
+            "benefits-image": "shopify://shop_images/Vector.svg"
+          }
+        },
+        "benefits_nbmtWp": {
+          "type": "benefits",
+          "settings": {
+            "benefits-title": "Live Support",
+            "benefit-subtitle": "7 days a week, 8 AM – 11 PM",
+            "benefits-image": "shopify://shop_images/headphone.svg"
+          }
+        },
+        "benefits_HNpGhz": {
+          "type": "benefits",
+          "settings": {
+            "benefits-title": "Nationwide Shipping",
+            "benefit-subtitle": "Free for orders above RM100",
+            "benefits-image": "shopify://shop_images/truck_f39cd279-dc41-4ec6-8af6-65727255ddb8.svg"
+          }
+        },
+        "benefits_txTUHi": {
+          "type": "benefits",
+          "settings": {
+            "benefits-title": "Weekly Coffee Rewards",
+            "benefit-subtitle": "Join & unlock surprise gifts every week",
+            "benefits-image": "shopify://shop_images/piggiy-bank.svg"
+          }
+        }
+      },
+      "block_order": [
+        "benefits_y4JjGz",
+        "benefits_nbmtWp",
+        "benefits_HNpGhz",
+        "benefits_txTUHi"
+      ],
+      "name": "Benefit With Icon",
+      "settings": {
+        "extra_class": ""
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero_banner_VjiGJG",
+    "marquee_66B3pf",
+    "hp_about_us_f49zKr",
+    "featured_collection_xeMGGL",
+    "benefit_with_icon_W4VP6N"
   ]
 }
