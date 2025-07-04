@@ -22,7 +22,7 @@
         "text_content_EKyt3E": {
           "type": "text_content",
           "settings": {
-            "banner": "<p>Just the Coffee You Need, Exactly When You Need It.</p>",
+            "banner": "<h1>Just the Coffee You Need, Exactly When You Need It.</h1>",
             "description": "<p>Discover a place where every cup is a masterpiece, crafted with passion and precision. From the rich, bold flavors of our signature blends to the cozy ambiance that feels like home.</p>"
           }
         },
@@ -260,6 +260,21 @@
       "settings": {
         "extra_class": ""
       }
+    },
+    "download_apps_BUNgqE": {
+      "type": "download-apps",
+      "name": "Download Apps",
+      "settings": {
+        "extra_class": "",
+        "red_coffee_cup": "shopify://shop_images/Red_cup.svg",
+        "coffee_cup_text": "Coffee At Your Fingertips",
+        "heading": "<h2>Download our mobile app</h2>",
+        "desciption": "<p>Stay connected with Roast wherever you go. With our mobile app, you can browse the menu,place orders, schedule pickups, and enjoy exclusive rewards all from the convenience of yourphone. Download and bring your favorite coffee.</p>",
+        "app_store_text": "App Store",
+        "app_store_url": "#",
+        "google_play_text": "Google Play",
+        "google_play_url": "#"
+      }
     }
   },
   "order": [
@@ -267,6 +282,7 @@
     "marquee_66B3pf",
     "hp_about_us_f49zKr",
     "featured_collection_xeMGGL",
-    "benefit_with_icon_W4VP6N"
+    "benefit_with_icon_W4VP6N",
+    "download_apps_BUNgqE"
   ]
 }

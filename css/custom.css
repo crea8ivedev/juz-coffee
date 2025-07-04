@@ -1,0 +1,29 @@
+@font-face {
+  font-family: Constructio_Grotesk;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.shopify.com/s/files/1/0622/2633/3831/files/ConstructioGrotesk-Regular.woff2?v=1751609700")
+    format("woff2");
+}
+/* PDP Variants */
+.flavour-image-pill {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0.5rem;
+  border: 2px solid transparent;
+  padding: 4px;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.flavour-image-pill input:checked + label,
+.flavour-image-pill:has(input:checked) {
+  border-color: #000;
+}
+
+.variant-image-wrapper img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}

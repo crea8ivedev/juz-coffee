@@ -11,6 +11,64 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "mobile_headermenu_bottom_TifQyQ": {
+      "type": "mobile-headermenu-bottom",
+      "blocks": {
+        "menus_7W3WU6": {
+          "type": "Menus",
+          "settings": {
+            "menu_url": "#",
+            "sselect_icon": "home",
+            "menu_title": ""
+          }
+        },
+        "menus_Nz9px4": {
+          "type": "Menus",
+          "settings": {
+            "menu_url": "#",
+            "sselect_icon": "wishlist",
+            "menu_title": ""
+          }
+        },
+        "menus_G3Arhj": {
+          "type": "Menus",
+          "settings": {
+            "menu_url": "https://jp7300.myshopify.com/cart",
+            "sselect_icon": "cart",
+            "menu_title": ""
+          }
+        },
+        "menus_PqEcGc": {
+          "type": "Menus",
+          "settings": {
+            "menu_url": "#",
+            "sselect_icon": "notification",
+            "menu_title": ""
+          }
+        },
+        "menus_b99NH9": {
+          "type": "Menus",
+          "disabled": true,
+          "settings": {
+            "menu_url": "#",
+            "sselect_icon": "home",
+            "menu_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "menus_7W3WU6",
+        "menus_Nz9px4",
+        "menus_G3Arhj",
+        "menus_PqEcGc",
+        "menus_b99NH9"
+      ],
+      "name": "Mobile Stickybar",
+      "settings": {
+        "extra_class_menus": "",
+        "enable_mobile_stickybar": true
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -85,6 +143,7 @@
     }
   },
   "order": [
+    "mobile_headermenu_bottom_TifQyQ",
     "footer"
   ]
 }

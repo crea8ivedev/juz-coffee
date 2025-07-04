@@ -1,6 +1,6 @@
 {% # theme-check-disable %}
 
-<div class="hero-banner-section {{ section.settings.class_name }}">
+<div class="hero-banner-section relative {{ section.settings.class_name }}">
   <div class="hero-banner-media">
     {% if section.settings.banner_video != blank %}
       <video autoplay muted loop playsinline class="w-full h-auto object-cover">
@@ -18,7 +18,7 @@
     {% endif %}
   </div>
 
-  <div class="hero-banner-content container mx-auto relative z-10 text-center py-12">
+  <div class="hero-banner-content absolute top-1/2 left-1/2 -translate-1/2 container mx-auto text-center py-12">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'coffee_mug' %}
@@ -34,7 +34,7 @@
             </div>
           {% endif %}
           {% if block.settings.coffee_mug_caption != blank %}
-            <p class="coffee-mug-caption text-sm text-gray-700">{{ block.settings.coffee_mug_caption }}</p>
+            <p class="coffee-mug-caption text-white">{{ block.settings.coffee_mug_caption }}</p>
           {% endif %}
 
         {% when 'text_content' %}
@@ -53,7 +53,7 @@
           {% if block.settings.shop_button_text != blank and block.settings.shop_button_url != blank %}
             <a
               href="{{ block.settings.shop_button_url }}"
-              class="inline-block bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition mb-4"
+              class="ctm-button ctm-button-red"
             >
               {{ block.settings.shop_button_text }}
             </a>
@@ -63,7 +63,7 @@
           {% if block.settings.point_button_text != blank and block.settings.point_button_url != blank %}
             <a
               href="{{ block.settings.point_button_url }}"
-              class="inline-block border border-black text-black px-6 py-3 rounded hover:bg-black hover:text-white transition"
+              class="ctm-button ctm-button-outline"
             >
               {{ block.settings.point_button_text }}
             </a>

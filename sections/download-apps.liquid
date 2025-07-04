@@ -1,0 +1,100 @@
+<div class="download-app-wrapper {{ section.settings.extra_class }}">
+  <div class="download-app-content text-center max-w-3xl mx-auto py-12 px-4">
+    {% if section.settings.red_coffee_cup %}
+      <div class="mb-2">
+        <img
+          src="{{ section.settings.red_coffee_cup | image_url: width: 40 }}"
+          alt="Coffee Icon"
+          class="mx-auto"
+          width="auto"
+          height="auto"
+        >
+      </div>
+    {% endif %}
+
+    {% if section.settings.coffee_cup_text != blank %}
+      <p class="">{{ section.settings.coffee_cup_text }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <div class="">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.desciption != blank %}
+      <div class="">{{ section.settings.desciption }}</div>
+    {% endif %}
+
+    <div class="flex justify-center gap-4 flex-wrap">
+      {% if section.settings.app_store_url != blank %}
+        <a href="{{ section.settings.app_store_url }}" class="">
+          {{ section.settings.app_store_text }}
+        </a>
+      {% endif %}
+      {% if section.settings.google_play_url != blank %}
+        <a href="{{ section.settings.google_play_url }}" class="">
+          {{ section.settings.google_play_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Download Apps",
+  "class": "ctm-download-apps",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Extra Class",
+      "id": "extra_class"
+    },
+    {
+      "type": "image_picker",
+      "label": "Red Coffee Cup",
+      "id": "red_coffee_cup"
+    },
+    {
+      "type": "text",
+      "label": "Coffee Cup Text",
+      "id": "coffee_cup_text"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Desciption",
+      "id": "desciption"
+    },
+    {
+      "type": "text",
+      "label": "App Store Text",
+      "id": "app_store_text"
+    },
+    {
+      "type": "url",
+      "label": "App Store URL",
+      "id": "app_store_url"
+    },
+    {
+      "type": "text",
+      "label": "Google Play Text",
+      "id": "google_play_text"
+    },
+    {
+      "type": "url",
+      "label": "Google Play URL",
+      "id": "google_play_url"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Download Apps"
+    }
+  ]
+}
+{% endschema %}
