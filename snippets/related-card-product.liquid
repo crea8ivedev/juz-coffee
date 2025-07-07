@@ -162,6 +162,14 @@
             </a>
           </h3>
           <div class="card-information">
+            <div class="card__description rte">
+              {{ card_product.description | strip_html | truncatewords: 50 }}
+            </div>
+
+            <div class="card_buybtn">
+              <a href="{{ card_product.url }}" class="ctm-button ctm-button-red max-smscreen:w-full"> Buy Now </a>
+            </div>
+
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>

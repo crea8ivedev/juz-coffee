@@ -37,8 +37,6 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
-  {% assign collection_meta = collection.metafields.custom.select_collections.value %}
-
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -195,37 +193,15 @@
       </div>
     </div>
   {%- endpaginate -%}
-
   {% if section.settings.image_shape == 'arch' %}
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
-  {% if collection_meta %}
-    {% assign next_collection_url = '' %}
 
-    {% for collec in collection_meta %}
-      {% assign selected_collection = collec.select_collection.value %}
-      {% if selected_collection.handle == collection.handle %}
-        {% assign current_index = forloop.index0 %}
-        {% assign next_index = current_index | plus: 1 %}
-        {% if collection_meta.size > next_index %}
-          {% assign next_collec = collection_meta[next_index] %}
-          {% if next_collec == null %}
-            {% assign next_collec = collection_meta[0] %}
-          {% endif %}
-
-          {% assign next_collection_url = next_collec.select_collection.value.url %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-
-    {% if next_collection_url != blank %}
-      <div class="check-next-collection-button text-center my-6">
-        <a href="{{ next_collection_url }}" class="bg-primary-red text-white px-6 py-3 rounded inline-block">
-          Check Next Collection
-        </a>
-      </div>
-    {% endif %}
-  {% endif %}
+  <div id="next-collection-button-container" class="text-center my-6">
+    <a href="" id="next-collection-button" class="bg-primary-red text-white px-6 py-3 rounded inline-block">
+      Check Next Collection
+    </a>
+  </div>
 </div>
 
 {% schema %}

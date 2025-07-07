@@ -61,6 +61,48 @@ document.addEventListener("DOMContentLoaded", () => {
       block.style.maxHeight = isActive ? null : `${block.scrollHeight}px`;
     }
   }
+
+  // collection filter loop start
+
+  const filterSection = document.getElementById("collection-filter-section");
+  const btn_next = document.getElementById("next-collection-button");
+
+  if (!filterSection || !btn_next) {
+    return;
+  }
+
+  const rawData = filterSection.getAttribute("data-collections");
+
+  if (!rawData) {
+    return;
+  }
+
+  let collections;
+  try {
+    collections = JSON.parse(rawData);
+  } catch (e) {
+    return;
+  }
+
+  const currentPath = window.location.pathname
+    .replace(/^\/collections\//, "")
+    .replace(/\/$/, "");
+
+  const currentIndex = collections.findIndex(
+    (col) => col.handle === currentPath,
+  );
+
+  if (currentIndex === -1) {
+    return;
+  }
+
+  const nextIndex = (currentIndex + 1) % collections.length;
+
+  const nextCollection = collections[nextIndex];
+
+  btn_next.href = nextCollection.url;
+
+  // collection filter loop end
 });
 
 // Recommend Slider PDP

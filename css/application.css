@@ -126,6 +126,7 @@
   --breakpoint-mdscreen4: 750px;
   --breakpoint-mdscreen: 767px;
   --breakpoint-mdscreen6: 768px;
+  --breakpoint-mdscreen8: 769px;
   --breakpoint-mdscreen1: 989px;
   --breakpoint-mdscreen3: 991px;
   --breakpoint-mdscreen2: 990px;
@@ -216,7 +217,7 @@
   h4,
   .h4,
   h1.h4 {
-    @apply lgscreen2:text-22 lgscreen2:leading-26 text-24 leading-[26px];
+    @apply lgscreen2:text-22 lgscreen2:leading-26 smscreen:text-18 smscreen:leading-24 text-14 leading-[20px];
   }
 
   h5,
@@ -445,6 +446,10 @@
 }
 /* header end */
 
+/* footer start */
+
+/* footer end */
+
 .mobile-stickybar-section .bls__mobile-stickybar {
   @apply max-smscreen:block hidden;
 }
@@ -463,5 +468,5 @@
 }
 
 .hours-block-table td {
-  @apply text-primary-red p-0 text-18;
+  @apply text-primary-red p-0 mdscreen2:text-18 smscreen:text-16 text-12;
 }

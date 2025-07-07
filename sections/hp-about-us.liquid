@@ -3,9 +3,9 @@
     class="ctm-about-bg container_fluid"
     style="background-image: url({{ section.settings.background_image | image_url }});"
   >
-    <div class="flex items-center gap-60 max-mdscreen2:flex-col large_desktop_2:px-100">
-      <div class="about-head-icon-main mdscreen2:w-1/2 w-full">
-        <div class="mdscreen2:max-w-[700px]">
+    <div class="flex items-center gap-60 max-smscreen:gap-[40px] max-lgscreen2:flex-col large_desktop_2:px-100">
+      <div class="about-head-icon-main lgscreen2:w-1/2 w-full">
+        <div class="lgscreen2:max-w-[700px]">
           <div class="flex items-end gap-8">
             {% if section.settings.caption_image != blank %}
               <img
@@ -82,19 +82,25 @@
           </div>
         </div>
       </div>
-      <div class="ctm-about-image mdscreen2:w-1/2 w-full relative flex justify-end mdscreen2:pl-70">
-        <div class="ctm-about-hours-img relative">
-          <div class="ctm-about-hours bg-white rounded-[26px] shadow-[0px_4px_25.9px_0px_rgba(0,0,0,0.05)] absolute -left-[100px] bottom-[95px]">
+      <div class="ctm-about-image w-[60%] lgscreen2:w-1/2 max-mdscreen8:w-full relative flex justify-end mdscreen2:ml-70">
+        <div class="ctm-about-hours-img relative max-mdscreen:pl-40">
+          <div class="ctm-about-hours bg-white rounded-[26px] max-mdscreen:rounded-[20px] shadow-[0px_4px_25.9px_0px_rgba(0,0,0,0.05)] absolute lgscreen2:-left-[150px] -left-[100px] lgscreen2:bottom-[95px] bottom-[20px] max-mdscreen8:-left-[50px] max-mdscreen4:left-0">
             {% for block in section.blocks %}
               {% if block.type == 'open_hours' %}
-                <div class="hours-block p-[30px]">
-                  <div class="bg-primary-red p-12 inline-block rounded-full mb-8">
+                <div class="hours-block p-[30px] max-mdscreen6:p-[20px] max-smscreen:p-[10px]">
+                  <div class="bg-primary-red p-12 max-smscreen:p-8 inline-block rounded-full mb-0">
                     {% if block.settings.clock_image != blank %}
-                      <img src="{{ block.settings.clock_image | image_url }}" height="auto" width="auto" alt="Clock">
+                      <img
+                        class="max-smscreen:w-[18px] max-smscreen:h-[18px]"
+                        src="{{ block.settings.clock_image | image_url }}"
+                        height="auto"
+                        width="auto"
+                        alt="Clock"
+                      >
                     {% endif %}
                   </div>
                   {% if block.settings.open_hours_heading != blank %}
-                    <h4 class="text-primary-red mb-20 max-smscreen:mb-14">{{ block.settings.open_hours_heading }}</h4>
+                    <h4 class="text-primary-red mb-20 max-smscreen:mb-10">{{ block.settings.open_hours_heading }}</h4>
                   {% endif %}
                   {% if block.settings.open_hours_description != blank %}
                     <div class="hours-block-table">{{ block.settings.open_hours_description }}</div>
@@ -105,7 +111,7 @@
           </div>
           {% if section.settings.about_image != blank %}
             <img
-              class="rounded-[320px_320px_0_0]"
+              class="rounded-[320px_320px_10px_10px]"
               src="{{ section.settings.about_image | image_url }}"
               height="auto"
               width="auto"
