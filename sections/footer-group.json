@@ -11,6 +11,21 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "download_apps_FC3kgT": {
+      "type": "download-apps",
+      "name": "Download Apps",
+      "settings": {
+        "extra_class": "",
+        "red_coffee_cup": "shopify://shop_images/Red_cup.svg",
+        "coffee_cup_text": "Coffee At Your Fingertips",
+        "heading": "<h2>Download our mobile app</h2>",
+        "desciption": "<p>Stay connected with Roast wherever you go. With our mobile app, you can browse the menu,place orders, schedule pickups, and enjoy exclusive rewards all from the convenience of yourphone. Download and bring your favorite coffee.</p>",
+        "app_store_text": "App Store",
+        "app_store_url": "#",
+        "google_play_text": "Google Play",
+        "google_play_url": "#"
+      }
+    },
     "mobile_headermenu_bottom_TifQyQ": {
       "type": "mobile-headermenu-bottom",
       "blocks": {
@@ -143,6 +158,7 @@
     }
   },
   "order": [
+    "download_apps_FC3kgT",
     "mobile_headermenu_bottom_TifQyQ",
     "footer"
   ]

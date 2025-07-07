@@ -60,6 +60,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "MOCHA"
           }
         },
@@ -67,6 +68,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "MACCHIATO"
           }
         },
@@ -74,6 +76,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "COLD BREW"
           }
         },
@@ -81,6 +84,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "ESPRESSO"
           }
         },
@@ -88,6 +92,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "AMERICANO"
           }
         },
@@ -95,6 +100,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "LATTE"
           }
         },
@@ -102,6 +108,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "HAZELNUT LATTE"
           }
         },
@@ -109,6 +116,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "DOUBLE SHOT"
           }
         },
@@ -116,6 +124,7 @@
           "type": "item",
           "settings": {
             "show_separator": false,
+            "image": "shopify://shop_images/Pattern.svg",
             "text": "CAPPUCCINO"
           }
         }
@@ -260,21 +269,6 @@
       "settings": {
         "extra_class": ""
       }
-    },
-    "download_apps_BUNgqE": {
-      "type": "download-apps",
-      "name": "Download Apps",
-      "settings": {
-        "extra_class": "",
-        "red_coffee_cup": "shopify://shop_images/Red_cup.svg",
-        "coffee_cup_text": "Coffee At Your Fingertips",
-        "heading": "<h2>Download our mobile app</h2>",
-        "desciption": "<p>Stay connected with Roast wherever you go. With our mobile app, you can browse the menu,place orders, schedule pickups, and enjoy exclusive rewards all from the convenience of yourphone. Download and bring your favorite coffee.</p>",
-        "app_store_text": "App Store",
-        "app_store_url": "#",
-        "google_play_text": "Google Play",
-        "google_play_url": "#"
-      }
     }
   },
   "order": [
@@ -282,7 +276,6 @@
     "marquee_66B3pf",
     "hp_about_us_f49zKr",
     "featured_collection_xeMGGL",
-    "benefit_with_icon_W4VP6N",
-    "download_apps_BUNgqE"
+    "benefit_with_icon_W4VP6N"
   ]
 }

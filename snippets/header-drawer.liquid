@@ -11,8 +11,9 @@
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
-      <span>
-        {{- 'humburger.svg' | inline_asset_content -}}
+      <span class="humburger_svg">
+        {% render 'humburger' %}
+        {% comment %} {{- 'humburger.svg' | inline_asset_content -}} {% endcomment %}
         {{- 'icon-close.svg' | inline_asset_content -}}
       </span>
     </summary>

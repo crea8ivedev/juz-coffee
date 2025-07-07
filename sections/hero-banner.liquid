@@ -1,7 +1,7 @@
 {% # theme-check-disable %}
 
-<div class="hero-banner-section relative {{ section.settings.class_name }}">
-  <div class="hero-banner-media">
+<div class="hero-banner-section h-[calc(100vh_-_176px)] overflow-hidden relative {{ section.settings.class_name }}">
+  <div class="hero-banner-media h-full">
     {% if section.settings.banner_video != blank %}
       <video autoplay muted loop playsinline class="w-full h-auto object-cover">
         <source src="{{ section.settings.banner_video | video_url }}" type="video/mp4">
@@ -13,64 +13,70 @@
         height="auto"
         width="auto"
         alt="Hero Banner Image"
-        class="w-full h-auto object-cover"
+        class="w-full h-full object-cover"
       >
     {% endif %}
   </div>
 
-  <div class="hero-banner-content absolute top-1/2 left-1/2 -translate-1/2 container mx-auto text-center py-12">
+  <div class="hero-banner-content absolute top-1/2 left-1/2 -translate-1/2 max-w-[1000px] w-full mx-auto text-center py-12 z-[5] px-16">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'coffee_mug' %}
-          {% if block.settings.coffee_mug_image != blank %}
-            <div class="coffee-mug mb-4">
-              <img
-                src="{{ block.settings.coffee_mug_image | image_url }}"
-                height="auto"
-                width="auto"
-                alt="Coffee Mug"
-                class="mx-auto"
-              >
-            </div>
-          {% endif %}
-          {% if block.settings.coffee_mug_caption != blank %}
-            <p class="coffee-mug-caption text-white">{{ block.settings.coffee_mug_caption }}</p>
-          {% endif %}
+          <div class="flex justify-center items-center gap-8 mb-20">
+            {% if block.settings.coffee_mug_image != blank %}
+              <div class="coffee-mug max-xsscreen2_1:w-[18px] max-xsscreen2_1:h-[18px]">
+                <img
+                  src="{{ block.settings.coffee_mug_image | image_url }}"
+                  height="auto"
+                  width="auto"
+                  alt="Coffee Mug"
+                  class="mx-auto"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.coffee_mug_caption != blank %}
+              <p class="coffee-mug-caption text-white max-xsscreen2_1:text-[14px]">
+                {{ block.settings.coffee_mug_caption }}
+              </p>
+            {% endif %}
+          </div>
 
         {% when 'text_content' %}
           {% if block.settings.banner != blank %}
-            <div class="banner-text mb-4 text-4xl font-bold">
+            <div class="banner-text text-white font-regular mb-[17px]">
               {{ block.settings.banner }}
             </div>
           {% endif %}
           {% if block.settings.description != blank %}
-            <div class="banner-description mb-6 text-lg text-gray-600">
+            <div class="banner-description text-white">
               {{ block.settings.description }}
             </div>
           {% endif %}
 
         {% when 'shop_button' %}
-          {% if block.settings.shop_button_text != blank and block.settings.shop_button_url != blank %}
-            <a
-              href="{{ block.settings.shop_button_url }}"
-              class="ctm-button ctm-button-red"
-            >
-              {{ block.settings.shop_button_text }}
-            </a>
-          {% endif %}
-
+          <div class="banner-button mt-[42px] max-mdscreen6:mt-[30px] flex gap-20 justify-center max-smscreen:flex-col">
+            {% if block.settings.shop_button_text != blank and block.settings.shop_button_url != blank %}
+              <a
+                href="{{ block.settings.shop_button_url }}"
+                class="ctm-button ctm-button-red max-smscreen:w-full"
+              >
+                {{ block.settings.shop_button_text }}
+              </a>
+            {% endif %}
         {% when 'point_button' %}
           {% if block.settings.point_button_text != blank and block.settings.point_button_url != blank %}
             <a
               href="{{ block.settings.point_button_url }}"
-              class="ctm-button ctm-button-outline"
+              class="ctm-button ctm-button-outline max-smscreen:w-full"
             >
               {{ block.settings.point_button_text }}
             </a>
           {% endif %}
+          </div>
       {% endcase %}
     {% endfor %}
   </div>
+  <div class="absolute top-0 left-0 w-full h-full !bg-black/60 z-2 !block"></div>
 </div>
 
 {% schema %}

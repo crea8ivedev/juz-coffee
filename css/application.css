@@ -180,7 +180,7 @@
   }
 
   p {
-    @apply lgscreen:text-18 lgscreen:leading-32 text-16 leading-30 font-body font-regular;
+    @apply lgscreen:text-18 lgscreen:leading-26 text-16 leading-24 font-body font-regular;
   }
 
   h1,
@@ -197,7 +197,7 @@
   .title-h1,
   h2.h1,
   h1.h2 {
-    @apply midlarge_desktop:text-60 midlarge_desktop:leading-[66px] lgscreen2:text-50 lgscreen2:leading-[56px] mdscreen:text-32 mdscreen:leading-[38px] text-24 leading-30;
+    @apply midlarge_desktop:text-60 midlarge_desktop:leading-[68px] lgscreen2:text-50 lgscreen2:leading-[56px] mdscreen:text-46 mdscreen:leading-[44px] text-24 leading-30;
   }
 
   h2,
@@ -210,19 +210,19 @@
   h3,
   .h3,
   h2.h3 {
-    @apply lgscreen2:text-22 lgscreen2:leading-26 text-24 leading-[26px];
+    @apply lgscreen2:text-32 lgscreen2:leading-[38px] mdscreen:text-[28px] mdscreen:leading-[32px] text-18 leading-24;
   }
 
   h4,
   .h4,
   h1.h4 {
-    @apply mdscreen:text-20 mdscreen:leading-26 text-18 leading-24;
+    @apply lgscreen2:text-22 lgscreen2:leading-26 text-24 leading-[26px];
   }
 
   h5,
   .h5,
   h1.h5 {
-    @apply text-18 leading-24;
+    @apply mdscreen:text-20 mdscreen:leading-26 text-18 leading-24;
   }
 
   h6,
@@ -258,11 +258,11 @@
 @layer components {
   .button,
   .ctm-button {
-    @apply font-body capitalize px-[18px] pr-[52px] inline-flex transition-all duration-300 ease-in-out cursor-pointer w-fit text-18 text-center pt-[3px] rounded-10 font-extrabold min-h-[50px] items-center justify-center relative overflow-hidden;
+    @apply font-body capitalize px-[18px] pr-[52px] inline-flex transition-all duration-300 ease-in-out cursor-pointer w-fit text-18 text-center rounded-10 font-extrabold min-h-[50px] items-center justify-center relative overflow-hidden;
   }
 
   .ctm-button-red {
-    @apply bg-primary-red text-white hover:no-underline;
+    @apply bg-primary-red text-white hover:no-underline border-2 border-solid border-primary-red;
   }
 
   .ctm-button-red::before {
@@ -270,11 +270,11 @@
   }
 
   .ctm-button-red:hover::before {
-    @apply translate-x-[5px];
+    @apply translate-x-[5px] bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/Mask_Group.svg?v=1751875988')];
   }
 
   .ctm-button-red:hover {
-    @apply bg-dark-red;
+    @apply text-primary-red bg-transparent border-2 border-primary-red border-solid;
   }
   .ctm-button-outline {
     @apply bg-transparent border-1 border-white border-solid relative hover:no-underline text-white;
@@ -313,7 +313,7 @@
 }
 
 .main-announcement-bar {
-  @apply py-[11px] max-xl:py-[10px];
+  @apply py-[11.6px] max-xl:py-[10px];
 }
 
 .second-announcement-bar .svg-wrapper {
@@ -356,7 +356,7 @@
 }
 
 .ctm_header_menu .list-menu__item.link span {
-  @apply font-body font-medium text-white text-18 leading-24 capitalize py-0 transition-all duration-300 ease-in-out no-underline hover:text-dark-red;
+  @apply font-body font-medium text-white text-18 leading-24 max-xlscreen1:text-16 capitalize py-0 transition-all duration-300 ease-in-out no-underline hover:text-dark-red;
 }
 
 .ctm_header_menu .header__inline-menu a.header__menu-item {
@@ -368,7 +368,7 @@
 }
 
 .ctm_header_menu .header__inline-menu ul.list-menu {
-  @apply large_desktop:gap-x-[40px] gap-x-30 items-center;
+  @apply large_desktop:gap-x-[40px] gap-x-16 items-center;
 }
 
 .ctm_header_menu .header__inline-menu {
@@ -383,16 +383,21 @@
   @apply p-0;
 }
 
-.ctm_header_menu .header__icon .svg-wrapper {
-  @apply !w-[35px] !h-[35px] max-mdscreen6:!w-[28px] max-mdscreen6:!h-[28px] bg-white p-[7px] rounded-full transition-all duration-500 ease-in-out;
+.ctm_header_menu .header__icon .svg-wrapper,
+.humburger_svg {
+  @apply !w-[35px] !h-[35px] max-mdscreen6:!w-[28px] max-mdscreen6:!h-[28px] bg-white p-[7px] max-xsscreen2:p-[5px] rounded-full transition-all duration-500 ease-in-out;
+}
+
+.humburger_svg svg {
+  @apply w-full h-full;
 }
 
 .ctm_header_menu .header__icon .svg-wrapper:hover {
-  @apply !bg-dark-red;
+  @apply !bg-dark-red  transition-all duration-300 ease-in-out;
 }
 
 .ctm_header_menu .header__icon .svg-wrapper:hover svg path {
-  @apply fill-white stroke-white;
+  @apply fill-white stroke-white  transition-all duration-300 ease-in-out;
 }
 
 .ctm_header_menu .header__search .svg-wrapper:hover svg path {
@@ -411,10 +416,6 @@
   @apply w-auto;
 }
 
-.ctm_header_menu .menu-drawer-container .header__icon--menu {
-  @apply pl-14;
-}
-
 .menu-open header-drawer {
   @apply ml-0;
 }
@@ -423,15 +424,44 @@
   @apply hidden;
 }
 
+.menu-open header-drawer .header__icon span svg:first-child {
+  @apply hidden;
+}
+
 .menu-open header-drawer .header__icon span svg:last-child path {
-  @apply fill-white stroke-white;
+  @apply fill-primary-red stroke-primary-red;
+}
+
+.menu-open header-drawer .header__icon span svg:last-child {
+  @apply w-[1.5rem] h-[1.5rem] max-xsscreen2:w-[1.3rem] max-xsscreen2:h-[1.3rem];
 }
 
 .ctm_header_menu .header__icons {
   @apply gap-[12px];
 }
+
+.ctm_header_menu summary .icon-caret {
+  @apply text-white h-[0.7rem] max-xl:h-[0.6px];
+}
 /* header end */
 
 .mobile-stickybar-section .bls__mobile-stickybar {
   @apply max-smscreen:block hidden;
+}
+
+.hours-block-table table:not([class]) td,
+.hours-block-table table:not([class]) {
+  @apply border-none shadow-none p-0;
+}
+
+.hours-block-table tr {
+  @apply pb-10;
+}
+
+.hours-block-table tr td:last-child {
+  @apply text-end;
+}
+
+.hours-block-table td {
+  @apply text-primary-red p-0 text-18;
 }

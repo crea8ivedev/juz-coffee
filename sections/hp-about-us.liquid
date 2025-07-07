@@ -1,84 +1,119 @@
-<div class="{{ section.settings.extra_class }} about-us-main-hp">
-  <div class="ctm-about-bg" style="background-image: url({{ section.settings.background_image | image_url }});">
-    <div class="about-head-icon-main">
-      {% if section.settings.caption_image != blank %}
-        <img
-          src="{{ section.settings.caption_image | image_url }}"
-          height="auto"
-          width="auto"
-          alt="Caption Image"
-          class="caption-img"
-        >
-      {% endif %}
-
-      {% if section.settings.caption_text != blank %}
-        <h4 class="caption-text">{{ section.settings.caption_text }}</h4>
-      {% endif %}
-
-      {% if section.settings.heading != blank %}
-        <div class="about-heading">{{ section.settings.heading }}</div>
-      {% endif %}
-
-      {% if section.settings.description != blank %}
-        <div class="about-description">{{ section.settings.description }}</div>
-      {% endif %}
-
-      <div class="beverage-icons">
-        {% for block in section.blocks %}
-          {% if block.type == 'beverage_text' %}
-            <div class="beverage-block">
-              {% if block.settings.beverage_icon != blank %}
-                <img src="{{ block.settings.beverage_icon | image_url }}" height="auto" width="auto" alt="Icon">
-              {% endif %}
-              {% if block.settings.beverage_heading != blank %}
-                <h5>{{ block.settings.beverage_heading }}</h5>
-              {% endif %}
-              {% if block.settings.beverage_description != blank %}
-                <div>{{ block.settings.beverage_description }}</div>
-              {% endif %}
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      {% if section.settings.about_btn_text and section.settings.about_btn_url %}
-        <a href="{{ section.settings.about_btn_url }}" class="about-btn">
-          {{ section.settings.about_btn_text }}
-        </a>
-      {% endif %}
-
-      {% if section.settings.video_play_button != blank %}
-        <div class="video-play">
-          <img src="{{ section.settings.video_play_button | image_url }}" height="auto" width="auto" alt="Play Button">
-          {% if section.settings.video_play_button_text %}
-            <span>{{ section.settings.video_play_button_text }}</span>
-          {% endif %}
-        </div>
-      {% endif %}
-    </div>
-
-    <div class="ctm-about-hours">
-      {% for block in section.blocks %}
-        {% if block.type == 'open_hours' %}
-          <div class="hours-block">
-            {% if block.settings.clock_image != blank %}
-              <img src="{{ block.settings.clock_image | image_url }}" height="auto" width="auto" alt="Clock">
+<div class="{{ section.settings.extra_class }} about-us-main-hp py-90 max-lgscreen:py-60 max-mdscreen6:py-40 bg-cream">
+  <div
+    class="ctm-about-bg container_fluid"
+    style="background-image: url({{ section.settings.background_image | image_url }});"
+  >
+    <div class="flex items-center gap-60 max-mdscreen2:flex-col large_desktop_2:px-100">
+      <div class="about-head-icon-main mdscreen2:w-1/2 w-full">
+        <div class="mdscreen2:max-w-[700px]">
+          <div class="flex items-end gap-8">
+            {% if section.settings.caption_image != blank %}
+              <img
+                src="{{ section.settings.caption_image | image_url }}"
+                height="auto"
+                width="auto"
+                alt="Caption Image"
+                class="caption-img"
+              >
             {% endif %}
-            {% if block.settings.open_hours_heading != blank %}
-              <h5>{{ block.settings.open_hours_heading }}</h5>
-            {% endif %}
-            {% if block.settings.open_hours_description != blank %}
-              <div>{{ block.settings.open_hours_description }}</div>
+
+            {% if section.settings.caption_text != blank %}
+              <p class="text-primary-red leading-100p">{{ section.settings.caption_text }}</p>
             {% endif %}
           </div>
-        {% endif %}
-      {% endfor %}
-    </div>
 
-    <div class="ctm-about-image">
-      {% if section.settings.about_image != blank %}
-        <img src="{{ section.settings.about_image | image_url }}" height="auto" width="auto" alt="About Image">
-      {% endif %}
+          {% if section.settings.heading != blank %}
+            <div class="about-heading mt-12 text-black">{{ section.settings.heading }}</div>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div class="about-description mt-16 text-grey">{{ section.settings.description }}</div>
+          {% endif %}
+
+          <div class="beverage-icons mt-50 max-mdscreen2:mt-30 flex flex-col gap-26 mdscreen2:pr-70">
+            {% for block in section.blocks %}
+              {% if block.type == 'beverage_text' %}
+                <div class="beverage-block flex gap-20 items-start">
+                  <div class="w-auto">
+                    <div class="w-[60px] h-[60px] bg-primary-red inline-flex justify-center items-center p-[12px] object-contain rounded-full">
+                      {% if block.settings.beverage_icon != blank %}
+                        <img
+                          class="object-contain"
+                          src="{{ block.settings.beverage_icon | image_url }}"
+                          height="auto"
+                          width="auto"
+                          alt="Icon"
+                        >
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="w-[90%] flex flex-col gap-8">
+                    {% if block.settings.beverage_heading != blank %}
+                      <h4 class="text-primary-red">{{ block.settings.beverage_heading }}</h4>
+                    {% endif %}
+                    {% if block.settings.beverage_description != blank %}
+                      <div class="text-grey">{{ block.settings.beverage_description }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="flex items-center gap-50 mt-50 max-mdscreen2:mt-30 max-smscreen:flex-col max-smscreen:gap-[20px] max-smscreen:items-start">
+            {% if section.settings.about_btn_text and section.settings.about_btn_url %}
+              <a href="{{ section.settings.about_btn_url }}" class="ctm-button ctm-button-red">
+                {{ section.settings.about_btn_text }}
+              </a>
+            {% endif %}
+
+            {% if section.settings.video_play_button != blank %}
+              <div class="video-play flex gap-20 items-center">
+                <img
+                  src="{{ section.settings.video_play_button | image_url }}"
+                  height="auto"
+                  width="auto"
+                  alt="Play Button"
+                >
+                {% if section.settings.video_play_button_text %}
+                  <span>{{ section.settings.video_play_button_text }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="ctm-about-image mdscreen2:w-1/2 w-full relative flex justify-end mdscreen2:pl-70">
+        <div class="ctm-about-hours-img relative">
+          <div class="ctm-about-hours bg-white rounded-[26px] shadow-[0px_4px_25.9px_0px_rgba(0,0,0,0.05)] absolute -left-[100px] bottom-[95px]">
+            {% for block in section.blocks %}
+              {% if block.type == 'open_hours' %}
+                <div class="hours-block p-[30px]">
+                  <div class="bg-primary-red p-12 inline-block rounded-full mb-8">
+                    {% if block.settings.clock_image != blank %}
+                      <img src="{{ block.settings.clock_image | image_url }}" height="auto" width="auto" alt="Clock">
+                    {% endif %}
+                  </div>
+                  {% if block.settings.open_hours_heading != blank %}
+                    <h4 class="text-primary-red mb-20 max-smscreen:mb-14">{{ block.settings.open_hours_heading }}</h4>
+                  {% endif %}
+                  {% if block.settings.open_hours_description != blank %}
+                    <div class="hours-block-table">{{ block.settings.open_hours_description }}</div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if section.settings.about_image != blank %}
+            <img
+              class="rounded-[320px_320px_0_0]"
+              src="{{ section.settings.about_image | image_url }}"
+              height="auto"
+              width="auto"
+              alt="About Image"
+            >
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </div>

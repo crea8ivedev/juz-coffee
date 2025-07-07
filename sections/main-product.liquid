@@ -466,6 +466,21 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+              {%- when 'product_icon_text' -%}
+                <div class="ctm-icon-text-product">
+                  <img
+                    src="{{ product.metafields.custom.pdp_icon_text.value.icon | image_url }}"
+                    height="auto"
+                    width="auto"
+                    alt="icon"
+                  >
+                  <p>{{ product.metafields.custom.pdp_icon_text.value.text }}</p>
+                </div>
+
+              {%- when 'product_tabs' -%}
+                {% render 'product-tabs' %}
+
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -919,6 +934,16 @@
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
         }
       ]
+    },
+    {
+      "type": "product_icon_text",
+      "name": "Product Icon Text",
+      "settings": []
+    },
+    {
+      "type": "product_tabs",
+      "name": "Product Tabs",
+      "settings": []
     },
     {
       "type": "description",
