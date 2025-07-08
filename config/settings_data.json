@@ -19,6 +19,7 @@
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
+    "animations_reveal_on_scroll": false,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -104,14 +105,15 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
+    "brand_image": "shopify://shop_images/Logo.png",
     "social_facebook_link": "https://www.facebook.com/",
     "social_instagram_link": "https://www.instagram.com/",
-    "social_youtube_link": "https://www.youtube.com/",
+    "social_youtube_link": "",
     "social_tiktok_link": "",
-    "social_twitter_link": "",
+    "social_twitter_link": "https://x.com/",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
-    "social_tumblr_link": "",
+    "social_tumblr_link": "https://in.linkedin.com/",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
@@ -183,6 +185,17 @@
           "button": "#ffffff",
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-3758ed03-3aa1-4369-947b-14fe1c59f82d": {
+        "settings": {
+          "background": "#ee3424",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       }

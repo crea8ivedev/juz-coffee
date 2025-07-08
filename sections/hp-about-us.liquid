@@ -30,7 +30,7 @@
             <div class="about-description mt-16 text-grey">{{ section.settings.description }}</div>
           {% endif %}
 
-          <div class="beverage-icons mt-50 max-mdscreen2:mt-30 flex flex-col gap-26 mdscreen2:pr-70">
+          <div class="beverage-icons mt-50 max-mdscreen2:mt-30 flex flex-col gap-26 mdscreen2:pr-50">
             {% for block in section.blocks %}
               {% if block.type == 'beverage_text' %}
                 <div class="beverage-block flex gap-20 items-start">
@@ -84,7 +84,7 @@
       </div>
       <div class="ctm-about-image w-[60%] lgscreen2:w-1/2 max-mdscreen8:w-full relative flex justify-end mdscreen2:ml-70">
         <div class="ctm-about-hours-img relative max-mdscreen:pl-40">
-          <div class="ctm-about-hours bg-white rounded-[26px] max-mdscreen:rounded-[20px] shadow-[0px_4px_25.9px_0px_rgba(0,0,0,0.05)] absolute lgscreen2:-left-[150px] -left-[100px] lgscreen2:bottom-[95px] bottom-[20px] max-mdscreen8:-left-[50px] max-mdscreen4:left-0">
+          <div class="ctm-about-hours bg-white rounded-[26px] max-mdscreen:rounded-[20px] shadow-[0px_4px_25.9px_0px_rgba(0,0,0,0.05)] absolute lgscreen2:-left-[180px] -left-[100px] lgscreen2:bottom-[95px] bottom-[20px] max-mdscreen8:-left-[50px] max-mdscreen4:left-0">
             {% for block in section.blocks %}
               {% if block.type == 'open_hours' %}
                 <div class="hours-block p-[30px] max-mdscreen6:p-[20px] max-smscreen:p-[10px]">
@@ -100,7 +100,9 @@
                     {% endif %}
                   </div>
                   {% if block.settings.open_hours_heading != blank %}
-                    <h4 class="text-primary-red mb-20 max-smscreen:mb-10">{{ block.settings.open_hours_heading }}</h4>
+                    <h4 class="text-primary-red mb-20 max-smscreen:mb-10 max-smscreen:text-14 max-smscreen:leading-normal">
+                      {{ block.settings.open_hours_heading }}
+                    </h4>
                   {% endif %}
                   {% if block.settings.open_hours_description != blank %}
                     <div class="hours-block-table">{{ block.settings.open_hours_description }}</div>

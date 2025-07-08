@@ -197,11 +197,13 @@
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 
-  <div id="next-collection-button-container" class="text-center my-6">
-    <a href="" id="next-collection-button" class="bg-primary-red text-white px-6 py-3 rounded inline-block">
-      Check Next Collection
-    </a>
-  </div>
+  {% if section.settings.check_collection_btn != blank and section.settings.enable_collection_btn %}
+    <div id="next-collection-button-container" class="page-width my-6">
+      <a href="" id="next-collection-button" class="ctm-button ctm-button-red">
+        {{ section.settings.check_collection_btn }}
+      </a>
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}
@@ -249,6 +251,19 @@
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_collection_btn",
+      "label": "Enbale Check Collection Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "check_collection_btn",
+      "label": "Next Collection Button",
+      "default": "Check Next Collection",
+      "visible_if": "{{ section.settings.enable_collection_btn }}"
     },
     {
       "type": "header",

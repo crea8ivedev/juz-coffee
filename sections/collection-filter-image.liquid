@@ -1,23 +1,4 @@
-<div
-  class="collection_main_filter_ctm"
-  id="collection-filter-section"
-  {% comment %}
-    data-collections="
-      [{% if collection.metafields.custom.select_collections != blank %}
-          {% assign collection_meta = collection.metafields.custom.select_collections.value %}
-          {% for collec in collection_meta %}
-            {% assign selected_collection = collec.select_collection.value %}
-            {
-              "title": {{ collec.collection_title | json }},
-              "handle": {{ selected_collection.handle | json }},
-              "url": {{ selected_collection.url | json }}
-            }{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        {% endif %}
-      ]
-    "
-  {% endcomment %}
->
+<div class="collection_main_filter_ctm" id="collection-filter-section">
   <div class="collection_filter_heading">
     {% if section.settings.filter_title != blank %}
       <h2>{{ section.settings.filter_title }}</h2>
@@ -88,6 +69,30 @@
     {% endif %}
   </div>
 </div>
+
+<script id="collection-data-json" type="application/json">
+  [
+    {% if collection.metafields.custom.select_collections != blank %}
+      {% assign collection_meta = collection.metafields.custom.select_collections.value %}
+      {% for collec in collection_meta %}
+        {% assign selected_collection = collec.select_collection.value %}
+        {
+          "title": {{ collec.collection_title | json }},
+          "handle": {{ selected_collection.handle | json }},
+          "url": {{ selected_collection.url | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% else %}
+      {% for block in section.blocks %}
+        {
+          "title": {{ block.settings.collection_name | json }},
+          "handle": {{ block.settings.collection_link | split: '/' | last | json }},
+          "url": {{ block.settings.collection_link | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% endif %}
+  ]
+</script>
 
 {% schema %}
 {

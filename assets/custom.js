@@ -71,15 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const rawData = filterSection.getAttribute("data-collections");
-
-  if (!rawData) {
-    return;
-  }
+  const script = document.getElementById("collection-data-json");
+  if (!script) {return;}
 
   let collections;
   try {
-    collections = JSON.parse(rawData);
+    collections = JSON.parse(script.textContent);
   } catch (e) {
     return;
   }

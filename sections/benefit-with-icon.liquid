@@ -1,22 +1,24 @@
 <div class="ctm_benefit_with_icon {{ section.settings.extra_class }}">
-  <div class="ctm_inner_benefits">
-    {% for block in section.blocks %}
-      <div class="ctm_main_benefits">
-        <div class="ctm_benefits_icon">
-          <img
-            src="{{ block.settings.benefits-image | image_url }}"
-            alt="Hero Banner Image"
-            width="40"
-            height="40"
-            class="h-auto object-cover"
-          >
+  <div class="container_fluid">
+    <div class="ctm_inner_benefits !grid midlarge_desktop_2:grid-cols-4 mdscreen2:grid-cols-2 grid-cols-1 gap-24 items-center">
+      {% for block in section.blocks %}
+        <div class="ctm_main_benefits flex items-center gap-x-[18px]">
+          <div class="ctm_benefits_icon w-max">
+            <img
+              src="{{ block.settings.benefits-image | image_url }}"
+              alt="Hero Banner Image"
+              width="auto"
+              height="auto"
+              class="object-contain w-[60px] h-[60px]"
+            >
+          </div>
+          <div class="ctm_benefits_content flex flex-col gap-8 midlarge_desktop_2:max-w-[330px] max-smscreen:max-w-[260px]">
+            <h5 class="text-dark-red">{{ block.settings['benefits-title'] }}</h5>
+            <p class="text-black">{{ block.settings['benefit-subtitle'] }}</p>
+          </div>
         </div>
-        <div class="ctm_benefits_content">
-          <h2>{{ block.settings['benefits-title'] }}</h2>
-          <p>{{ block.settings['benefit-subtitle'] }}</p>
-        </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </div>
 

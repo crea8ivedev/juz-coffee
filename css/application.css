@@ -31,7 +31,7 @@
   --flex-none: none;
 
   /* shadow */
-  --shadow-xl: 0px 4px 4px 0px #00000040;
+  --shadow-xl: 0px 4px 25.9px 0px rgba(0, 0, 0, 0.05);
   --text-shadow: 0px 4px 4px 0px #00000040;
 
   /* padding - margin - height - width - gap */
@@ -130,7 +130,7 @@
   --breakpoint-mdscreen1: 989px;
   --breakpoint-mdscreen3: 991px;
   --breakpoint-mdscreen2: 990px;
-  --breakpoint-mdscreen7: 830px;
+  --breakpoint-mdscreen7: 850px;
 
   /* Laptop Screens (Smallest to Largest) */
   --breakpoint-lgscreen: 1023px;
@@ -168,7 +168,7 @@
   }
 
   body {
-    @apply p-0 m-0 !font-body text-18 leading-32 text-black antialiased bg-white relative;
+    @apply !p-0 !m-0 !font-body text-18 leading-32 text-black antialiased bg-white relative;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -198,7 +198,7 @@
   .title-h1,
   h2.h1,
   h1.h2 {
-    @apply midlarge_desktop:text-60 midlarge_desktop:leading-[68px] lgscreen2:text-50 lgscreen2:leading-[56px] mdscreen:text-46 mdscreen:leading-[44px] text-24 leading-30;
+    @apply midlarge_desktop:text-60 midlarge_desktop:leading-[68px] lgscreen2:text-50 lgscreen2:leading-[56px] mdscreen:text-36 mdscreen:leading-[42px] text-24 leading-30;
   }
 
   h2,
@@ -211,13 +211,13 @@
   h3,
   .h3,
   h2.h3 {
-    @apply lgscreen2:text-32 lgscreen2:leading-[38px] mdscreen:text-[28px] mdscreen:leading-[32px] text-18 leading-24;
+    @apply lgscreen2:text-30 lgscreen2:leading-[38px] smscreen:text-[28px] smscreen:leading-[32px] text-22 leading-24;
   }
 
   h4,
   .h4,
   h1.h4 {
-    @apply lgscreen2:text-22 lgscreen2:leading-26 smscreen:text-18 smscreen:leading-24 text-14 leading-[20px];
+    @apply lgscreen2:text-22 lgscreen2:leading-26 text-20 leading-26;
   }
 
   h5,
@@ -263,7 +263,7 @@
   }
 
   .ctm-button-red {
-    @apply bg-primary-red text-white hover:no-underline border-2 border-solid border-primary-red;
+    @apply bg-primary-red text-white hover:no-underline border-1 border-solid border-primary-red;
   }
 
   .ctm-button-red::before {
@@ -275,19 +275,39 @@
   }
 
   .ctm-button-red:hover {
-    @apply text-primary-red bg-transparent border-2 border-primary-red border-solid;
+    @apply text-primary-red bg-transparent border-1 border-primary-red border-solid;
   }
+
   .ctm-button-outline {
     @apply bg-transparent border-1 border-white border-solid relative hover:no-underline text-white;
   }
+
   .ctm-button-outline::before {
     @apply content-[''] absolute w-[25px] h-[20px] bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/aerrow.svg?v=1751615187')] bg-contain bg-no-repeat right-[18px] top-[53%] -translate-y-1/2 transition-transform duration-300 ease-in-out;
   }
+
   .ctm-button-outline:hover::before {
-    @apply translate-x-[5px];
+    @apply translate-x-[5px] bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/Mask_Group.svg?v=1751875988')];
   }
+
   .ctm-button-outline:hover {
-    @apply bg-primary-red border-primary-red;
+    @apply bg-white border-white text-primary-red;
+  }
+
+  .ctm-button-red-outline {
+    @apply bg-transparent border-1 border-primary-red border-solid relative hover:no-underline text-primary-red;
+  }
+
+  .ctm-button-red-outline::before {
+    @apply content-[''] absolute w-[25px] h-[20px] bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/Mask_Group.svg?v=1751875988')] bg-contain bg-no-repeat right-[18px] top-[53%] -translate-y-1/2 transition-transform duration-300 ease-in-out;
+  }
+
+  .ctm-button-red-outline:hover::before {
+    @apply translate-x-[5px] bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/aerrow.svg?v=1751615187')];
+  }
+
+  .ctm-button-red-outline:hover {
+    @apply bg-primary-red border-primary-red text-white;
   }
 }
 
@@ -353,7 +373,7 @@
 }
 
 .ctm_header_menu.header-wrapper {
-  @apply bg-primary-red border-0;
+  @apply border-0;
 }
 
 .ctm_header_menu .list-menu__item.link span {
@@ -389,7 +409,7 @@
   @apply !w-[35px] !h-[35px] max-mdscreen6:!w-[28px] max-mdscreen6:!h-[28px] bg-white p-[7px] max-xsscreen2:p-[5px] rounded-full transition-all duration-500 ease-in-out;
 }
 
-.humburger_svg svg {
+.ctm_header_menu .humburger_svg svg {
   @apply w-full h-full;
 }
 
@@ -434,7 +454,7 @@
 }
 
 .menu-open header-drawer .header__icon span svg:last-child {
-  @apply w-[1.5rem] h-[1.5rem] max-xsscreen2:w-[1.3rem] max-xsscreen2:h-[1.3rem];
+  @apply w-[1.5rem] h-[1.5rem] max-mdscreen:w-[1.2rem] max-mdscreen:h-[1.2rem];
 }
 
 .ctm_header_menu .header__icons {
@@ -442,12 +462,132 @@
 }
 
 .ctm_header_menu summary .icon-caret {
-  @apply text-white h-[0.7rem] max-xl:h-[0.6px];
+  @apply text-white h-[0.7rem];
+}
+
+.ctm_header_menu .header__submenu.list-menu {
+  @apply px-14 flex flex-col gap-8 !items-start rounded-10;
+}
+
+.ctm_header_menu .header__submenu.list-menu li a {
+  @apply text-primary-red no-underline font-medium hover:text-dark-red transition-all duration-500 ease-in-out;
+}
+
+.ctm_header_menu details[open] > .header__menu-item {
+  @apply no-underline;
 }
 /* header end */
 
 /* footer start */
 
+.footer {
+  @apply max-mdscreen7:!pt-32 relative;
+}
+
+.footer::before {
+  @apply content-[''] absolute bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/Group_ad0e4a74-ac59-4697-88ec-54ac7a927357.svg?v=1751970267')] opacity-30 w-full h-full max-w-[140px] bg-contain bg-no-repeat right-0 top-0;
+}
+
+.footer::after {
+  @apply content-[''] absolute bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/Group_1539.svg?v=1751970803')] w-full h-full max-h-[350px] bg-contain bg-no-repeat left-0 bottom-0;
+}
+
+.footer h2.footer-block__heading strong {
+  @apply text-center font-medium lgscreen2:text-30 lgscreen2:leading-[38px] smscreen:text-[28px] smscreen:leading-[32px] text-22 leading-24 text-white;
+}
+
+.footer .footer-block__details-content {
+  @apply text-center text-white;
+}
+
+.footer .foter-block_details-icon {
+  @apply bg-white p-20 max-mdscreen7:p-12 rounded-full mb-20;
+}
+
+.footer .footer-block__details-content p {
+  @apply midlarge_desktop_2:text-24 midlarge_desktop_2:leading-[30px] font-regular;
+}
+
+.footer .footer__blocks-wrapper.grid {
+  @apply max-mdscreen7:!block;
+}
+
+.footer .footer-block.grid__item {
+  @apply flex flex-col items-center justify-between relative pr-10 max-mdscreen7:w-full max-mdscreen7:py-24 max-mdscreen7:my-0;
+}
+
+.footer .footer-block.grid__item:last-child {
+  @apply max-mdscreen7:pb-0;
+}
+
+.footer .footer-block.grid__item::before {
+  @apply opacity-50 content-[''] absolute mdscreen7:right-0 mdscreen7:h-[90%] mdscreen7:w-[1px] bg-white mdscreen7:top-1/2 mdscreen7:-translate-y-1/2 w-[60%] max-smscreen:w-[80%] h-[1px] bottom-0;
+}
+
+.footer .footer-block.grid__item:last-child:before {
+  @apply content-none;
+}
+
+.footer .footer__content-top {
+  @apply lgscreen:pb-80 mdscreen7:pb-40 pb-24;
+}
+
+.footer .footer__content-bottom {
+  @apply relative border-none flex justify-between items-center max-mdscreen7:flex-col max-mdscreen7:gap-24 pt-50 max-mdscreen7:pt-24 max-smscreen:pb-30;
+}
+
+.footer .footer__bottom_content {
+  @apply mdscreen7:w-[33.33%] w-full mt-0;
+}
+
+.footer .footer__content-bottom::before {
+  @apply opacity-50 content-[''] absolute left-1/2 -translate-x-1/2 top-0 w-[88%] h-[1px] bg-white;
+}
+
+.footer .list-social__link {
+  @apply p-0;
+}
+
+.footer .footer__list-social.list-social:only-child {
+  @apply gap-12;
+}
+
+.footer .copyright__content {
+  @apply text-20 max-mdscreen7:text-16 leading-normal text-white;
+}
+
+.footer .footer__content-bottom-wrapper {
+  @apply mdscreen7:justify-start justify-center;
+}
+
+.footer
+  .footer__content-bottom-wrapper:not(.footer__content-bottom-wrapper--center)
+  .footer__copyright {
+  @apply mdscreen7:text-left text-center;
+}
+.footer .footer-block--newsletter {
+  @apply mdscreen7:justify-end;
+}
+.footer .footer-block--newsletter .svg-wrapper {
+  @apply bg-white p-8 w-40 h-40 rounded-10 hover:bg-dark-red transition-all duration-500 ease-in-out;
+}
+.footer
+  .footer-block--newsletter
+  .list-social__item:first-child
+  .svg-wrapper:hover
+  svg
+  path,
+.footer
+  .footer-block--newsletter
+  .list-social__item:last-child
+  .svg-wrapper:hover
+  svg
+  path {
+  @apply stroke-white fill-transparent transition-all duration-500 ease-in-out;
+}
+.footer .footer-block--newsletter .svg-wrapper:hover svg path {
+  @apply fill-white transition-all duration-500 ease-in-out;
+}
 /* footer end */
 
 .mobile-stickybar-section .bls__mobile-stickybar {
@@ -469,4 +609,7 @@
 
 .hours-block-table td {
   @apply text-primary-red p-0 mdscreen2:text-18 smscreen:text-16 text-12;
+}
+.download-app-wrapper::before {
+  @apply content-[''] absolute left-0 bottom-0 bg-[url('https://cdn.shopify.com/s/files/1/0622/2633/3831/files/Clip_path_group.svg?v=1751974169')] bg-no-repeat bg-contain w-[80px] h-[120px] max-lgscreen2:w-[60px] max-lgscreen2:h-[90px] max-smscreen:w-[50px] max-smscreen:h-[70px] opacity-20;
 }
