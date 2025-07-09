@@ -1,11 +1,14 @@
-<div class="collection_main_filter_ctm bg-cream py-80" id="collection-filter-section">
+<div
+  class="collection_main_filter_ctm bg-cream max-smscreen:bg-transparent border-r-1 border-dark-line smscreen:border-none xl:py-80 lgscreen2:py-60 py-40 max-smscreen:sticky max-smscreen:top-70 {{ section.settings.collec_extra_class }}"
+  id="collection-filter-section"
+>
   <div class="container_fluid">
-    <div class="collection_filter_heading">
+    <div class="collection_filter_heading max-smscreen:hidden">
       {% if section.settings.filter_title != blank %}
         <h2 class="text-black">{{ section.settings.filter_title }}</h2>
       {% endif %}
     </div>
-    <div class="collection_filter_grid_main flex items-center justify-start">
+    <div class="collection_filter_grid_main flex flex-wrap items-center justify-start gap-[52px] max-xl:gap-30 lgscreen2:mt-40 mt-30 max-smscreen:flex-col max-smscreen:mt-0 max-smscreen:gap-16">
       {% if collection.metafields.custom.select_collections != blank %}
         {% assign collection_meta = collection.metafields.custom.select_collections.value %}
         {% for collec in collection_meta %}
@@ -13,24 +16,27 @@
 
           <div class="main_filter_icon_text">
             {% if selected_collection.url %}
-              <a href="{{ selected_collection.url }}">
+              <a
+                class="flex flex-col justify-center items-center gap-14 max-smscreen:gap-8"
+                href="{{ selected_collection.url }}"
+              >
             {% endif %}
 
             {% if collec.collection_image != blank %}
-              <div class="main_filter_icon bg-primary-red">
+              <div class="main_filter_icon bg-primary-red rounded-full inline-block mx-auto">
                 <img
                   src="{{ collec.collection_image | image_url }}"
                   alt="{{ collec.collection_title }}"
-                  width="40"
-                  height="40"
-                  class="h-auto object-cover"
+                  width="50"
+                  height="50"
+                  class="main_filter_icon p-10 h-auto object-contain max-smscreen:w-[35px] max-smscreen:h-[35px] max-smscreen:p-8"
                 >
               </div>
             {% endif %}
 
             {% if collec.collection_title != blank %}
               <div class="main_filter_text">
-                <p>{{ collec.collection_title }}</p>
+                <p class="text-black font-semibold max-smscreen:text-[12px]">{{ collec.collection_title }}</p>
               </div>
             {% endif %}
 
@@ -95,50 +101,3 @@
     {% endif %}
   ]
 </script>
-
-{% schema %}
-{
-  "name": "Collection Filter",
-  "class": "section_collection_filter_custom",
-  "settings": [
-    {
-      "type": "text",
-      "label": "Extra Class",
-      "id": "extra_class"
-    },
-    {
-      "type": "text",
-      "label": "Filter Title",
-      "id": "filter_title"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "collection",
-      "name": "Collection",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Collection Name",
-          "id": "collection_name"
-        },
-        {
-          "type": "image_picker",
-          "label": "Collection Icon",
-          "id": "collection_icon"
-        },
-        {
-          "type": "url",
-          "id": "collection_link",
-          "label": "Collection URL"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Collection Filter"
-    }
-  ]
-}
-{% endschema %}

@@ -11,6 +11,7 @@
   --color-dark-grey: #c6c6c6;
   --color-light-grey: #d0d5dd;
   --color-cream: #fefbf6;
+  --color-dark-line: #ececec;
 
   /* Font-family */
   --font-body: "Inter", sans-serif;
@@ -173,11 +174,11 @@
   }
 
   a {
-    @apply transition-all duration-300 ease-in-out cursor-pointer font-body no-underline hover:underline;
+    @apply transition-all duration-300 ease-in-out cursor-pointer font-body no-underline;
   }
 
   a p {
-    @apply font-body text-26 leading-100p m-0 tracking-normal !no-underline  hover:!no-underline;
+    @apply lgscreen:text-18 lgscreen:leading-26 text-16 leading-24 font-body font-regular;
   }
 
   p {
@@ -568,27 +569,128 @@
 .footer .footer-block--newsletter {
   @apply mdscreen7:justify-end;
 }
-.footer .footer-block--newsletter .svg-wrapper {
-  @apply bg-white p-8 w-40 h-40 rounded-10 hover:bg-dark-red transition-all duration-500 ease-in-out;
+.footer .list-social__link .svg-wrapper {
+  @apply bg-white p-10 w-40 h-40 rounded-10 hover:bg-dark-red transition-all duration-500 ease-in-out;
 }
 .footer
-  .footer-block--newsletter
+  .list-social__link
   .list-social__item:first-child
   .svg-wrapper:hover
   svg
   path,
 .footer
-  .footer-block--newsletter
+  .list-social__link
   .list-social__item:last-child
   .svg-wrapper:hover
   svg
   path {
   @apply stroke-white fill-transparent transition-all duration-500 ease-in-out;
 }
-.footer .footer-block--newsletter .svg-wrapper:hover svg path {
+.footer .list-social__link .svg-wrapper:hover svg path {
   @apply fill-white transition-all duration-500 ease-in-out;
 }
 /* footer end */
+
+/* collection start */
+
+.collection .collection__title h2 {
+  @apply text-black text-center mb-40 max-mdscreen6:mb-30;
+}
+
+.card .card__inner {
+  @apply extlarge_desktop_1:h-[500px] midlarge_desktop:h-[400px] mdscreen:h-[300px] h-[280px];
+}
+
+.ctm-collection-grid-main .collection .card .card__inner {
+  @apply max-smscreen:h-[200px] max-xsscreen3:h-[150px];
+}
+
+.card .card__inner,
+.card .card__inner .card__media img {
+  @apply !rounded-10 overflow-hidden;
+}
+
+.card .card__inner .card__media,
+.card .card__inner .card__media .media {
+  @apply !overflow-visible;
+}
+
+.card .card__information .price__container .price-item {
+  @apply midlarge_desktop:text-[25px] mdscreen:text-24 text-22 text-primary-red font-semibold font-body;
+}
+
+.ctm-collection-grid-main
+  .collection
+  .card
+  .card__information
+  .price__container
+  .price-item {
+  @apply midlarge_desktop:text-[25px] mdscreen:text-20 text-14 text-primary-red font-semibold font-body;
+}
+
+.ctm-collection-grid-main
+  .collection
+  .card
+  .card__information
+  .price__container
+  span
+  s.price-item.price-item--regular {
+  @apply text-dark-grey font-regular;
+}
+
+.card .card__information .card__heading {
+  @apply midlarge_desktop:text-[25px] mdscreen:text-24 text-22 text-black font-bold font-body mt-5;
+}
+
+.ctm-collection-grid-main .collection .card .card__information .card__heading {
+  @apply mdscreen:text-16 text-12 leading-normal text-black font-bold mt-[2px];
+}
+
+.collection {
+  @apply max-lgscreen:!py-60 max-mdscreen:!py-32;
+}
+
+.ctm-collection-grid-main .collection {
+  @apply !py-0;
+}
+
+.ctm-collection-grid-main {
+  @apply max-smscreen:!pb-0;
+}
+
+.ctm-collection-grid-main .pagination__item.pagination__item--current {
+  @apply bg-primary-red text-white opacity-100 rounded-10 no-underline after:content-none;
+}
+
+.ctm-collection-grid-main .pagination__item.link {
+  @apply border-1 border-primary-red border-solid bg-transparent after:content-none text-primary-red rounded-10;
+}
+
+.ctm-collection-grid-main .pagination__item.link:hover {
+  @apply bg-primary-red border-1 border-primary-red border-solid text-white;
+}
+
+.ctm-collection-grid-main .pagination__item-arrow {
+  @apply !border-none hover:!bg-transparent hover:!border-none hover:!text-primary-red;
+}
+
+.ctm-collection-grid-main .pagination__list > li {
+  @apply max-w-[3.5rem] max-smscreen:max-w-[3rem];
+}
+
+.ctm-collection-grid-main .pagination__item {
+  @apply h-[3.5rem] max-smscreen:h-[3rem];
+}
+
+.ctm-collection-grid-main .pagination-wrapper {
+  @apply max-smscreen:mt-10;
+}
+
+.ctm-collection-grid-main .collection-hero__title::before {
+  @apply content-[''] absolute left-0 top-1/2 -translate-y-1/2 h-full w-8 bg-black;
+}
+
+/* collection end */
 
 .mobile-stickybar-section .bls__mobile-stickybar {
   @apply max-smscreen:block hidden;

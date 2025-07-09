@@ -1,0 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hp_about_us_RxtXme": {
+      "type": "hp-about-us",
+      "blocks": {
+        "beverage_text_ijBAhw": {
+          "type": "beverage_text",
+          "settings": {
+            "beverage_icon": "shopify://shop_images/cup_with_coaster.svg",
+            "beverage_heading": "Food Delivery",
+            "beverage_description": "<p>With our fast and reliable food delivery service, your favoritecoffee, snacks, and treats are just a click away.</p>"
+          }
+        },
+        "beverage_text_BpyPgd": {
+          "type": "beverage_text",
+          "settings": {
+            "beverage_icon": "shopify://shop_images/Mug.svg",
+            "beverage_heading": "Event Elegance",
+            "beverage_description": "<p>Host your special moments with us! From intimate gatherings to vibrant celebrations offers.</p>"
+          }
+        },
+        "open_hours_BrNexr": {
+          "type": "open_hours",
+          "settings": {
+            "clock_image": "shopify://shop_images/Clock.svg",
+            "open_hours_heading": "Open Hours",
+            "open_hours_description": "<table>\n<tbody>\n<tr>\n<td>Monday - Friday</td>\n<td>09:30 - 7:30</td>\n</tr>\n<tr>\n<td>Saturday</td>\n<td>10:30 - 5:00</td>\n</tr>\n<tr>\n<td>Sunday</td>\n<td>24 hours open</td>\n</tr>\n</tbody>\n</table>"
+          }
+        }
+      },
+      "block_order": [
+        "beverage_text_ijBAhw",
+        "beverage_text_BpyPgd",
+        "open_hours_BrNexr"
+      ],
+      "name": "Hp About Us",
+      "settings": {
+        "extra_class": "",
+        "caption_image": "shopify://shop_images/Red_cup.svg",
+        "caption_text": "About Us",
+        "heading": "<h2>Just the Coffee You Need, Exactly When You Need It.</h2>",
+        "description": "<p>Number of ways to create a new art of Coffee with your friends. Just demand, we in a minute provide a variety of coffee. Experience a new flavour.</p>",
+        "about_btn_text": "More About Us",
+        "about_btn_url": "#",
+        "video_play_button": "shopify://shop_images/Red_Play.svg",
+        "video_play_button_text": "Watch Video",
+        "about_image": "shopify://shop_images/about_us_image.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_about_us_RxtXme"
+  ]
+}

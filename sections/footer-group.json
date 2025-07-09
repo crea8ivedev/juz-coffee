@@ -17,6 +17,7 @@
       "settings": {
         "extra_class": "",
         "red_coffee_cup": "shopify://shop_images/Red_cup.svg",
+        "decorate_cup": "shopify://shop_images/Image_96f862f4-4a1f-49a9-a302-9d1cf4ee17af.png",
         "coffee_cup_text": "Coffee At Your Fingertips",
         "heading": "<h2>Download our mobile app</h2>",
         "desciption": "<p>Stay connected with Roast wherever you go. With our mobile app, you can browse the menu,place orders, schedule pickups, and enjoy exclusive rewards all from the convenience of yourphone. Download and bring your favorite coffee.</p>",
@@ -87,9 +88,14 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "newsletter_TaQUBx": {
+          "type": "newsletter",
+          "settings": {
+            "newsletter_heading_block": "Sign up for exclusive updates and offers"
+          }
+        },
         "footer-0": {
           "type": "link_list",
-          "disabled": true,
           "settings": {
             "heading": "<strong>CONTACT US</strong>",
             "menu": "footer"
@@ -97,7 +103,6 @@
         },
         "footer-1": {
           "type": "link_list",
-          "disabled": true,
           "settings": {
             "heading": "Info",
             "menu": "footer"
@@ -105,6 +110,7 @@
         },
         "footer-2": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "footer-block-image": "shopify://shop_images/SVG.svg",
             "heading": "<strong>CONTACT US</strong>",
@@ -115,6 +121,7 @@
         },
         "text_AJiMLK": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "footer-block-image": "shopify://shop_images/SVG_1.svg",
             "heading": "<strong>ADDRESS</strong>",
@@ -125,6 +132,7 @@
         },
         "text_L4GwNE": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "footer-block-image": "shopify://shop_images/SVG_2.svg",
             "heading": "<strong>OPENING HOURS</strong>",
@@ -135,6 +143,7 @@
         }
       },
       "block_order": [
+        "newsletter_TaQUBx",
         "footer-0",
         "footer-1",
         "footer-2",
@@ -151,7 +160,7 @@
         "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": false,
-        "margin_top": 48,
+        "margin_top": 0,
         "padding_top": 72,
         "padding_bottom": 52
       }
