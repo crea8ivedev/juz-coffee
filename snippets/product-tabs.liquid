@@ -6,7 +6,7 @@
   .tabs__area {
     display: none;
     padding: 15px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #c6c6c6;
   }
 
   .tabs__area--active {
@@ -28,6 +28,7 @@
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    border-bottom: 1px solid #c6c6c6;
   }
   .accordion__header {
     cursor: pointer;
@@ -48,15 +49,17 @@
 {% if product.metafields.custom.pdp_tab_and_accordions != blank %}
   <div class="container-fluid">
     <div class="tabs tabs--md">
-      <ul class="tabs__list list-unstyled">
-        {% if product.metafields.custom.pdp_tab_and_accordions != blank %}
-          {% for product_tab in product.metafields.custom.pdp_tab_and_accordions.value %}
-            <li class="tabs__item {% if forloop.first %}tabs__item--active{% endif %}">
-              <a href="#tab-{{ forloop.index }}" class="tabs__link">{{ product_tab.tab_title }}</a>
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
+      {% comment %}
+        <ul class="tabs__list list-unstyled">
+          {% if product.metafields.custom.pdp_tab_and_accordions != blank %}
+            {% for product_tab in product.metafields.custom.pdp_tab_and_accordions.value %}
+              <li class="tabs__item {% if forloop.first %}tabs__item--active{% endif %}">
+                <a href="#tab-{{ forloop.index }}" class="tabs__link">{{ product_tab.tab_title }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      {% endcomment %}
 
       <div class="tabs__content">
         {% if product.metafields.custom.pdp_tab_and_accordions != blank %}
@@ -80,11 +83,10 @@
                             tabindex="0"
                             data-toggle="#faq{{ forloop.index }}"
                           >
-                            <h4>
-                              {{ faq_entry.questions }}
-                            </h4>
+                            <p>{{ faq_entry.questions }}</p>
                             <div class="line"></div>
-                            <div class="accordion_icon">+</div>
+                            <div class="accordion_icon plus">+</div>
+                            <div class="accordion_icon minus">-</div>
                           </div>
                           {% if faq_entry.answer != blank %}
                             <div class="accordion__content" id="faq{{ forloop.index }}">

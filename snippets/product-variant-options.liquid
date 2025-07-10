@@ -110,16 +110,18 @@
     >
     <label for="{{ input_id }}">
       {% if variant_image %}
-        <img
-          src="{{ variant_image }}"
-          alt="{{ value | escape }}"
-          loading="lazy"
-          width="40"
-          height="40"
-          class="variant-pill-image"
-        >
+        {% comment %}
+          <img
+            src="{{ variant_image }}"
+            alt="{{ value | escape }}"
+            loading="lazy"
+            width="40"
+            height="40"
+            class="variant-pill-image"
+          >
+        {% endcomment %}
       {% endif %}
-      {% comment %} {{ value -}} {% endcomment %}
+      {{ value -}}
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}

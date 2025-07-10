@@ -27,3 +27,25 @@
   object-fit: cover;
   border-radius: 6px;
 }
+/* Read More PDP */
+.more-text {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.more-text.show {
+  display: inline;
+}
+
+.read-more-toggle {
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.pdp-desc-maintext {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}

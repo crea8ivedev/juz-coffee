@@ -91,21 +91,22 @@
         "newsletter_TaQUBx": {
           "type": "newsletter",
           "settings": {
-            "newsletter_heading_block": "Sign up for exclusive updates and offers"
+            "newsletter_heading_block": "Sign up for exclusive updates and offers",
+            "show_social_media_icons": true
           }
         },
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "<strong>CONTACT US</strong>",
-            "menu": "footer"
+            "heading": "Information",
+            "menu": "information"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "Categories",
+            "menu": "categories-1"
           }
         },
         "footer-2": {

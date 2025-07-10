@@ -586,6 +586,7 @@
   path {
   @apply stroke-white fill-transparent transition-all duration-500 ease-in-out;
 }
+
 .footer .list-social__link .svg-wrapper:hover svg path {
   @apply fill-white transition-all duration-500 ease-in-out;
 }
@@ -691,6 +692,161 @@
 }
 
 /* collection end */
+
+/* PDP start */
+
+.ctm-main-product .grid__item {
+  @apply max-mdscreen2:!w-full;
+}
+
+.price__container span s.price-item.price-item--regular {
+  @apply text-dark-grey mdscreen2:text-26 text-20 leading-normal font-semibold font-body;
+}
+
+.product__info-wrapper .price__container .price-item {
+  @apply xl:text-32 mdscreen2:text-28 text-24 leading-normal text-black font-semibold font-body;
+}
+
+.product__info-wrapper span.badge {
+  @apply text-white font-bold font-body pt-6;
+}
+
+.product__info-wrapper .price {
+  @apply mdscreen6:mt-24 mt-16;
+}
+
+.product__info-wrapper .pdp-desc-maintext {
+  @apply mdscreen6:pt-24 pt-16 border-t-1 border-solid border-dark-grey;
+}
+
+.product__info-wrapper .pdp-desc-maintext p {
+  @apply text-grey;
+}
+
+.product__info-wrapper .product__info-container .product__description {
+  @apply mdscreen6:mb-24 mb-16;
+}
+
+.product__info-wrapper .ctm-variants-selector {
+  @apply mdscreen6:py-24 py-16 border-t-1 border-solid border-dark-grey;
+}
+
+.product__info-wrapper .ctm-variants-selector legend.form__label {
+  @apply text-16 text-primary-red font-bold mb-8;
+}
+
+.product__info-wrapper .ctm-variants-selector legend.form__label span {
+  @apply text-black font-normal;
+}
+
+.product__info-wrapper .read-more-toggle {
+  @apply text-primary-red hover:text-black transition-all duration-300 ease-in-out;
+}
+
+.product__info-wrapper .product-form__input--pill input[type="radio"] + label {
+  @apply rounded-10 px-20 py-14 max-mdscreen6:px-[18px] max-mdscreen6:py-12 border-primary-red text-primary-red font-medium text-16 max-mdscreen6:text-14 transition-all duration-300 ease-in-out;
+}
+
+.product__info-wrapper
+  .product-form__input--pill
+  input[type="radio"]:checked
+  + label {
+  @apply bg-primary-red text-white font-medium;
+}
+
+.product__info-wrapper
+  .product-form__input--pill
+  input[type="radio"]
+  + label:hover {
+  @apply text-white bg-primary-red border-primary-red border-1 border-solid transition-all duration-300 ease-in-out;
+}
+
+.product__info-wrapper
+  .product-form__input--pill
+  input[type="radio"]:disabled
+  + label,
+.product__info-wrapper
+  .product-form__input--pill
+  input[type="radio"].disabled
+  + label {
+  @apply border-grey !text-grey bg-transparent cursor-not-allowed hover:bg-transparent hover:text-grey pointer-events-none;
+}
+
+.product__info-wrapper .product-form__quantity .form__label {
+  @apply text-black text-16 mb-10 font-medium;
+}
+
+.product__info-wrapper .quantity::after {
+  @apply content-none;
+}
+
+.product__info-wrapper .quantity__input:focus-visible {
+  @apply outline-none shadow-none;
+}
+
+.product__info-wrapper .quantity {
+  @apply border-1 border-primary-red border-solid rounded-10;
+}
+
+.product__info-wrapper .quantity__button,
+.product__info-wrapper .quantity__input {
+  @apply text-primary-red text-20 font-medium opacity-100;
+}
+
+.product__info-wrapper .quantity__button .svg-wrapper {
+  @apply w-[20px];
+}
+
+.product__info-wrapper .product__info-container .product-form {
+  @apply my-0;
+}
+
+.product__info-wrapper .ctm-icon-text-product {
+  @apply flex items-center gap-14 mdscreen6:pb-24 pb-16;
+}
+
+.product__info-wrapper .accordion {
+  @apply mt-0 mdscreen6:py-24 py-16;
+}
+
+.product__info-wrapper .accordion:first-child {
+  @apply border-t-0;
+}
+
+.product__info-wrapper .tabs__area,
+.product__info-wrapper .accordion__item .accordion__content {
+  @apply p-0;
+}
+
+.product__info-wrapper .accordion__content {
+  @apply mb-0;
+}
+
+.product__info-wrapper .accordion__header.active {
+  @apply mb-12;
+}
+
+.product__info-wrapper .accordion__header p {
+  @apply text-black font-medium;
+}
+
+.product__info-wrapper .accordion_icon.plus {
+  @apply mdscreen6:text-30 text-24 font-light text-primary-red border-1 rounded-full border-dark-grey mdscreen6:w-[28px] mdscreen6:h-[28px] w-[24px] h-[24px] flex justify-center items-center leading-normal mdscreen6:pb-[3px] pb-[2px];
+}
+
+.product__info-wrapper .accordion__header.active .accordion_icon.plus {
+  @apply hidden;
+}
+
+.product__info-wrapper .accordion_icon.minus {
+  @apply hidden;
+}
+
+.product__info-wrapper .accordion__header.active .accordion_icon.minus {
+  @apply mdscreen6:text-30 text-24 font-light text-white border-1 rounded-full bg-primary-red border-primary-red mdscreen6:w-[28px] mdscreen6:h-[28px] w-[24px] h-[24px] flex justify-center items-center leading-normal mdscreen6:pb-[3px] pb-[2px];
+}
+
+/* PDP end */
 
 .mobile-stickybar-section .bls__mobile-stickybar {
   @apply max-smscreen:block hidden;

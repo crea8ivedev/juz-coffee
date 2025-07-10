@@ -72,7 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const script = document.getElementById("collection-data-json");
-  if (!script) {return;}
+  if (!script) {
+    return;
+  }
 
   let collections;
   try {
@@ -135,4 +137,59 @@ function initializeSwiperIfAvailable() {
 document.addEventListener("shopify:section:load", initializeSwiperIfAvailable);
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(initializeSwiperIfAvailable, 1000); // Wait for AJAX to finish
+});
+
+// Read More JS PDP
+$(".read-more-toggle").click(function (e) {
+  e.preventDefault();
+
+  const $moreText = $(this).siblings(".more-text");
+  const $dots = $(this).siblings(".dots");
+  const isExpanded = $moreText.hasClass("show");
+
+  if (isExpanded) {
+    $moreText.removeClass("show");
+    $dots.show();
+    $(this).text("Read more...");
+  } else {
+    $moreText.addClass("show");
+    $dots.hide();
+    $(this).text(" Read less");
+  }
+});
+
+// product slider
+document.addEventListener("DOMContentLoaded", () => {
+  const swiper2 = new Swiper(".ctm_pdp_mainproduct_thumbnail_slider", {
+    loop: true,
+    spaceBetween: 39,
+    slidesPerView: 3,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      0: {
+        spaceBetween: 12,
+      },
+      1440: {
+        spaceBetween: 39,
+      },
+    },
+  });
+  const swiper = new Swiper(".ctm_pdp_mainproduct_slider", {
+    slidesPerView: 1,
+    grabCursor: true,
+    draggable: true,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper2,
+    },
+  });
 });

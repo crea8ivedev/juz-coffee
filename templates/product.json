@@ -16,18 +16,18 @@
           "type": "title",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "price": {
           "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
           "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
+            "picker_type": "button",
             "swatch_shape": "circle"
           }
         },
@@ -53,8 +53,8 @@
       },
       "block_order": [
         "title",
-        "description",
         "price",
+        "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -62,10 +62,11 @@
         "product_tabs_RQphmM"
       ],
       "settings": {
+        "enable_slider": true,
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "large",
-        "constrain_to_viewport": true,
+        "media_size": "small",
+        "constrain_to_viewport": false,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "show",
