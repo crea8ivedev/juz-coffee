@@ -1360,6 +1360,36 @@
     ]
   },
   {
+    "name": "Payment Image",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "payment_fpx",
+          "label": "Payment FPX"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_touchgo",
+          "label": "Payment Touch'ngo"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_grabpay",
+          "label": "Payment Grab Pay"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_visa",
+          "label": "Payment Visa"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_master",
+          "label": "Payment Master"
+        }
+    ]
+  },
+  {
     "name": "t:settings_schema.search_input.name",
     "settings": [
       {

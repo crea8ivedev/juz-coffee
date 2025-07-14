@@ -13,6 +13,7 @@
   "sections": {
     "download_apps_FC3kgT": {
       "type": "download-apps",
+      "disabled": true,
       "name": "Download Apps",
       "settings": {
         "extra_class": "",
@@ -109,6 +110,13 @@
             "menu": "categories-1"
           }
         },
+        "footer_social_aagjVx": {
+          "type": "footer-social",
+          "settings": {
+            "extra_class": "ctm-social-mobile",
+            "show_social_media_icons_footer": true
+          }
+        },
         "footer-2": {
           "type": "text",
           "disabled": true,
@@ -147,6 +155,7 @@
         "newsletter_TaQUBx",
         "footer-0",
         "footer-1",
+        "footer_social_aagjVx",
         "footer-2",
         "text_AJiMLK",
         "text_L4GwNE"
@@ -163,7 +172,7 @@
         "show_policy": false,
         "margin_top": 0,
         "padding_top": 72,
-        "padding_bottom": 52
+        "padding_bottom": 24
       }
     }
   },
