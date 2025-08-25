@@ -145,16 +145,7 @@
     {%- endif -%}
 
     {%- if item.available and item.unit_price_measurement -%}
-      <div class="unit-price caption">
-        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-        {{ item.unit_price | money }}
-        <span aria-hidden="true">/</span>
-        <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
-        {%- if item.unit_price_measurement.reference_value != 1 -%}
-          {{- item.unit_price_measurement.reference_value -}}
-        {%- endif -%}
-        {{ item.unit_price_measurement.reference_unit }}
-      </div>
+      {% render 'unit-price', price: item.unit_price, measurement: item.unit_price_measurement %}
     {%- endif -%}
   </td>
 
@@ -165,7 +156,6 @@
     <span class="price">{{ cart | line_items_for: item | sum: 'original_line_price' | money }}</span>
     {% # theme-check-enable %}
   </td>
-  {% # theme-check-disable %}
 
   <td class="variant-item__quantity">
     {%- liquid
@@ -196,13 +186,12 @@
         assign has_popover = true
       endif
     -%}
-    {% # theme-check-enable %}
     <quantity-popover>
       <div class="variant-item__quantity-wrapper quantity-popover-wrapper{% unless has_popover %} variant-item__quantity-wrapper--no-info{% endunless %}">
         <label class="visually-hidden" for="Quantity-{{ variant.id }}">
           {{ 'products.product.quantity.label' | t }}
         </label>
-        <div class="quantity-popover-container{% if is_available and has_popover %} quantity-popover-container--hover{% endif %}{% if cart_qty ==  0 %} quantity-popover-container--empty{% endif %}">
+        <div class="quantity-popover-container{% if is_available and has_popover %} quantity-popover-container--hover{% endif %}{% if cart_qty == 0 %} quantity-popover-container--empty{% endif %}">
           {%- if has_qty_rules or has_vol_pricing -%}
             <button
               type="button"
@@ -419,16 +408,7 @@
     {%- endif -%}
 
     {%- if item.available and item.unit_price_measurement -%}
-      <div class="unit-price caption">
-        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-        {{ item.unit_price | money }}
-        <span aria-hidden="true">/</span>
-        <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
-        {%- if item.unit_price_measurement.reference_value != 1 -%}
-          {{- item.unit_price_measurement.reference_value -}}
-        {%- endif -%}
-        {{ item.unit_price_measurement.reference_unit }}
-      </div>
+      {% render 'unit-price', price: item.unit_price, measurement: item.unit_price_measurement %}
     {%- endif -%}
   </td>
   <td class="variant-item__totals right small-hide medium-hide">

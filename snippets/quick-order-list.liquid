@@ -139,11 +139,11 @@
               >
                 <span class="quick-order-list__button-text">{{- 'sections.quick_order_list.view_cart' | t -}}</span>
               </a>
-              <div class="variant-remove-total{% if items_in_cart ==  0 %} variant-remove-total--empty{% endif %}">
+              <div class="variant-remove-total{% if items_in_cart == 0 %} variant-remove-total--empty{% endif %}">
                 {%- render 'loading-spinner' -%}
                 <quick-order-list-remove-all-button
                   data-action="confirm"
-                  class="{% if items_in_cart ==  0 %}hidden{% endif %}"
+                  class="{% if items_in_cart == 0 %}hidden{% endif %}"
                 >
                   <button class="button button--tertiary" type="button">
                     <span class="svg-wrapper">
@@ -233,7 +233,7 @@
               <div class="variant-remove-total">
                 {%- render 'loading-spinner' -%}
                 <quick-order-list-remove-all-button
-                  class="{% if items_in_cart ==  0 %}hidden{% endif %}"
+                  class="{% if items_in_cart == 0 %}hidden{% endif %}"
                   data-action="confirm"
                 >
                   <button class="button button--tertiary" type="button">

@@ -16,52 +16,32 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "SPECIAL SALE:  BLACK COFFEE  Shop now",
+            "text": "Welcome to our store",
             "link": ""
-          }
-        },
-        "announcement_bar_YhWfQF": {
-          "type": "announcement-bar",
-          "settings": {
-            "announce-text": "<p>SPECIAL SALE:  BLACK COFFEE  <a href=\"/collections/frontpage\" title=\"Home page\">Shop now</a></p>",
-            "announce-link": "",
-            "second-text": "<p><a href=\"tel:+91 000 000 0000\" title=\"tel:+91 000 000 0000\">+91 000 000 0000</a></p>"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement_bar_YhWfQF"
+        "announcement-bar-0"
       ],
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
+      "settings": {}
     },
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
-        "color_scheme": "scheme-3758ed03-3aa1-4369-947b-14fe1c59f82d",
-        "menu_color_scheme": "",
+        "color_scheme": "scheme-1",
         "enable_country_selector": true,
         "enable_language_selector": true,
-        "enable_customer_avatar": true,
         "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     }
   },
