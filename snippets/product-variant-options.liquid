@@ -16,8 +16,6 @@
     picker_type: picker_type
   %}
 {% endcomment %}
-{% # theme-check-disable %}
-
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
 -%}
@@ -25,18 +23,7 @@
 {%- for value in option.values -%}
   {%- liquid
     assign swatch_focal_point = null
-    assign variant_image = null
-
-    # First try to get variant image
-    for variant in product.variants
-      if variant.title contains value and variant.image
-        assign variant_image = variant.image | image_url: width: 100
-        break
-      endif
-    endfor
-
-    # Fall back to swatch image if no variant image
-    if variant_image == null and value.swatch.image
+    if value.swatch.image
       assign image_url = value.swatch.image | image_url: width: 50
       assign swatch_value = 'url(' | append: image_url | append: ')'
       assign swatch_focal_point = value.swatch.image.presentation.focal_point
@@ -63,7 +50,6 @@
   {%- capture input_dataset -%}
     data-product-url="{{ value.product_url }}"
     data-option-value-id="{{ value.id }}"
-    {% if variant_image %}data-variant-image="{{ variant_image }}"{% endif %}
   {%- endcapture -%}
 
   {%- capture label_unavailable -%}
@@ -74,10 +60,7 @@
 
   {%- if picker_type == 'swatch' -%}
     {%- capture help_text -%}
-      {% if variant_image %}
-        <img src="{{ variant_image }}" alt="{{ value | escape }}" loading="lazy" width="40" height="40" class="variant-pill-image">
-      {% endif %}
-      {% comment %} <span class="visually-hidden">{{ value | escape }}</span> {% endcomment %}
+      <span class="visually-hidden">{{ value | escape }}</span>
       {{ label_unavailable }}
     {%- endcapture -%}
     {%
@@ -109,18 +92,6 @@
       {{ input_dataset }}
     >
     <label for="{{ input_id }}">
-      {% if variant_image %}
-        {% comment %}
-          <img
-            src="{{ variant_image }}"
-            alt="{{ value | escape }}"
-            loading="lazy"
-            width="40"
-            height="40"
-            class="variant-pill-image"
-          >
-        {% endcomment %}
-      {% endif %}
       {{ value -}}
       {{ label_unavailable }}
     </label>

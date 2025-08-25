@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Dawn",
-    "theme_version": "15.3.0",
+    "theme_version": "15.4.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
@@ -1348,7 +1348,7 @@
       {
         "type": "text",
         "id": "social_tumblr_link",
-        "label": "Linked In",
+        "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_tumblr_link.info"
       },
       {
@@ -1357,36 +1357,6 @@
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
       }
-    ]
-  },
-  {
-    "name": "Payment Image",
-    "settings": [
-        {
-          "type": "image_picker",
-          "id": "payment_fpx",
-          "label": "Payment FPX"
-        },
-        {
-          "type": "image_picker",
-          "id": "payment_touchgo",
-          "label": "Payment Touch'ngo"
-        },
-        {
-          "type": "image_picker",
-          "id": "payment_grabpay",
-          "label": "Payment Grab Pay"
-        },
-        {
-          "type": "image_picker",
-          "id": "payment_visa",
-          "label": "Payment Visa"
-        },
-        {
-          "type": "image_picker",
-          "id": "payment_master",
-          "label": "Payment Master"
-        }
     ]
   },
   {
