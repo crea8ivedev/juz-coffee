@@ -3,8 +3,15 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "text_content_QQ7pAe": {
+          "type": "text_content",
+          "settings": {
+            "banner": "<p>cxzcz</p>",
+            "description": ""
+          }
+        },
+        "coffee_mug_TXzYFW": {
+          "type": "coffee_mug",
           "settings": {
             "heading": "Image banner",
             "heading_size": "h0"
@@ -30,9 +37,11 @@
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "text_content_QQ7pAe",
+        "coffee_mug_TXzYFW",
+        "text_content_EKyt3E",
+        "shop_button_RfnXrx",
+        "point_button_9wG6q4"
       ],
       "settings": {
         "image_overlay_opacity": 40,
