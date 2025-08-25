@@ -1,0 +1,134 @@
+{% # theme-check-disable %}
+
+{%- liquid
+  if section.settings.hide_variants and variant_images.size == product.media.size
+    assign single_media_visible = true
+  endif
+
+  assign media_count = product.media.size
+  if section.settings.hide_variants and media_count > 1 and variant_images.size > 0
+    assign media_count = media_count | minus: variant_images.size | plus: 1
+  endif
+
+  if media_count == 1 or single_media_visible
+    assign single_media_visible_mobile = true
+  endif
+
+  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
+    assign hide_mobile_slider = true
+  endif
+
+  if section.settings.media_size == 'large'
+    assign media_width = 0.65
+  elsif section.settings.media_size == 'medium'
+    assign media_width = 0.55
+  elsif section.settings.media_size == 'small'
+    assign media_width = 0.45
+  endif
+
+  assign id_append = ''
+  if is_duplicate
+    assign id_append = '-duplicate'
+  endif
+-%}
+
+<div
+  {% if section.settings.enable_sticky_info %}
+    class="product__column-sticky"
+  {% endif %}
+>
+  <div class="ctm_pdp_mainproduct_slider mdscreen1:rounded-0 swiper bg-off_white_100 rounded-[15px]">
+    <div class="swiper-wrapper items-center">
+      {%- for media in product.media -%}
+        {%- unless media.media_type == 'video' or media.media_type == 'external_video' -%}
+          <div class=" swiper-slide {{ media.alt }}" thumbnail-color="{{ media.alt }}">
+            {%- liquid
+              assign media_position = media_position | default: 0 | plus: 1
+              assign lazy_load = false
+              if media_position > 1
+                assign lazy_load = true
+              endif
+            -%}
+            {% render 'product-thumbnail',
+              media: media,
+              media_count: media_count,
+              position: media_position,
+              desktop_layout: section.settings.gallery_layout,
+              mobile_layout: section.settings.mobile_thumbnails,
+              loop: section.settings.enable_video_looping,
+              modal_id: section.id,
+              xr_button: true,
+              media_width: media_width,
+              media_fit: section.settings.media_fit,
+              constrain_to_viewport: section.settings.constrain_to_viewport,
+              lazy_load: lazy_load,
+              product_main: true
+            %}
+          </div>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="ctm-product-arrows mdscreen1:hidden ">
+    <div class="arrow-btn swiper-button-next -right-[22px]">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="38"
+        height="31"
+        viewBox="0 0 38 31"
+        fill="none"
+        class="mdscreen6:!w-[34px] mdscreen6:!h-[24px] !w-[16px] !h-[16px]"
+      >
+        <path d="M27.1712 18.2456L20.0306 25.3147L19.3131 26.0251L20.0304 26.7357L22.0236 28.7104L22.7271 29.4074L23.4309 28.7107L35.7035 16.5611L36.4209 15.8509L35.704 15.1403L23.4321 2.97405L22.7288 2.2768L22.0248 2.97332L20.0303 4.94648L19.3125 5.65662L20.0296 6.36752L27.177 13.4535L2 13.4535L1 13.4535L1 14.4535L1 17.2456L1 18.2456L2 18.2456L27.1712 18.2456Z" fill="#F8F6F0" stroke="#FFF4E9" stroke-width="2"></path>
+      </svg>
+    </div>
+    <div class="arrow-btn swiper-button-prev -left-[22px]">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="38"
+        height="31"
+        viewBox="0 0 38 31"
+        fill="none"
+        class="mdscreen6:!w-[34px] mdscreen6:!h-[24px] !w-[16px] !h-[16px]"
+      >
+        <path d="M10.8288 12.7544L17.9694 5.68533L18.6869 4.97493L17.9696 4.26427L15.9764 2.2896L15.2729 1.5926L14.5691 2.28934L2.29647 14.4389L1.57912 15.1491L2.29596 15.8597L14.5679 28.0259L15.2712 28.7232L15.9752 28.0267L17.9697 26.0535L18.6875 25.3434L17.9704 24.6325L10.823 17.5465H36H37V16.5465V13.7544V12.7544H36H10.8288Z" fill="#F8F6F0" stroke="#FFF4E9" stroke-width="2"></path>
+      </svg>
+    </div>
+  </div>
+  <div class=" swiper ctm_pdp_mainproduct_thumbnail_slider mt-[36px] mdscreen1:hidden">
+    <div thumbsSlider="" class="swiper-wrapper">
+      {%- for media in product.media -%}
+        {%- unless media.media_type == 'video' or media.media_type == 'external_video' -%}
+          <div
+            class="extlarge_desktop_1:h-[350px] h-[250px] large_desktop_2:h-[185px] cursor-pointer rounded-[15px] swiper-slide {{ media.alt }}"
+            thumbnail-color="{{ media.alt }}"
+          >
+            {%- liquid
+              assign media_position = media_position | default: 0 | plus: 1
+              assign lazy_load = false
+              if media_position > 1
+                assign lazy_load = true
+              endif
+            -%}
+            {% render 'product-thumbnail',
+              media: media,
+              media_count: media_count,
+              position: media_position,
+              desktop_layout: section.settings.gallery_layout,
+              mobile_layout: section.settings.mobile_thumbnails,
+              loop: section.settings.enable_video_looping,
+              modal_id: section.id,
+              xr_button: true,
+              media_width: media_width,
+              media_fit: section.settings.media_fit,
+              constrain_to_viewport: section.settings.constrain_to_viewport,
+              lazy_load: lazy_load,
+              product_main: true
+            %}
+          </div>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

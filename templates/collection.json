@@ -1,7 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "collection_filter_image_7GrkQ7": {
+      "type": "collection-filter-image",
+      "blocks": {
+        "collection_VaW6EK": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "New In",
+            "collection_icon": "shopify://shop_images/Group.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_pCqMHH": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Drinkware",
+            "collection_icon": "shopify://shop_images/fastfood_24dp_1F1F1F_FILL0_wght300_GRAD0_opsz24_1.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_bBY3YN": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Coffee",
+            "collection_icon": "shopify://shop_images/Vector_2.svg",
+            "collection_link": "shopify://collections"
+          }
+        },
+        "collection_JhePkV": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Collectible",
+            "collection_icon": "shopify://shop_images/Vector_3.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_h4JdQx": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection_name": "",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_MgTEad": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Limited Edition",
+            "collection_icon": "shopify://shop_images/Vector_4.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_yLjKgF": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Brew Tool",
+            "collection_icon": "shopify://shop_images/Vector_5.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_3TTdn6": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Essential Kits",
+            "collection_icon": "shopify://shop_images/Clip_path_group.png",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_bzWQFR": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Kopi Patah Hati",
+            "collection_icon": "shopify://shop_images/4_1.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        },
+        "collection_piARdt": {
+          "type": "collection",
+          "settings": {
+            "collection_name": "Outdoor Vibes",
+            "collection_icon": "shopify://shop_images/5_1.svg",
+            "collection_link": "shopify://collections/frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "collection_VaW6EK",
+        "collection_pCqMHH",
+        "collection_bBY3YN",
+        "collection_JhePkV",
+        "collection_h4JdQx",
+        "collection_MgTEad",
+        "collection_yLjKgF",
+        "collection_3TTdn6",
+        "collection_bzWQFR",
+        "collection_piARdt"
+      ],
+      "disabled": true,
+      "name": "Collection Filter",
+      "settings": {
+        "extra_class": "",
+        "filter_title": "Shop All"
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -13,19 +126,28 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "",
+        "enable_collection_btn": true,
+        "check_collection_btn": "Check Next Collection",
+        "collec_extra_class": "",
+        "filter_title": "Shop All",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "padding_top": 48,
         "padding_bottom": 36
       }
     }
   },
   "order": [
+    "collection_filter_image_7GrkQ7",
     "banner",
     "product-grid"
   ]

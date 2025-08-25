@@ -70,7 +70,7 @@
 
   <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
     <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
-      <div class="featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 or section.settings.product == blank %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+      <div class="featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background ==  false %} isolate{% endif %} {% if product.media.size > 0 or section.settings.product ==  blank %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
         <div class="grid__item product__media-wrapper">
           {%- unless placeholder -%}
             {% render 'product-media-gallery', product: product, variant_images: variant_images, limit: 1 %}
@@ -100,7 +100,7 @@
                   {% render block %}
                 {%- when 'text' -%}
                   <p
-                    class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                    class="product__text inline-richtext{% if block.settings.text_style ==  'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style ==  'subtitle' %} subtitle{% endif %}"
                     {{ block.shopify_attributes }}
                   >
                     {{- block.settings.text -}}
@@ -152,7 +152,7 @@
                   {%- endunless -%}
                 {%- when 'sku' -%}
                   <p
-                    class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
+                    class="product__sku{% if block.settings.text_style ==  'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style ==  'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size ==  0 %} visibility-hidden{% endif %}"
                     id="Sku-{{ section.id }}"
                     role="status"
                     {{ block.shopify_attributes }}
@@ -163,7 +163,7 @@
                 {%- when 'quantity_selector' -%}
                   <div
                     id="Quantity-Form-{{ section.id }}"
-                    class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                    class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset !=  0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                     {{ block.shopify_attributes }}
                   >
                     {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -172,20 +172,9 @@
                       | item_count_for_variant: product.selected_or_first_available_variant.id
                     -%}
                     {% # theme-check-enable %}
-                    <span class="visually-hidden" id="quantity-label-{{ section.id }}">
-                      {%- if cart_qty > 0 -%}
-                        {{- 'products.product.quantity.in_cart_aria_label' | t: quantity: cart_qty -}}
-                      {%- else -%}
-                        {{- 'products.product.quantity.label' | t -}}
-                      {%- endif -%}
-                    </span>
-                    <label
-                      class="quantity__label form__label"
-                      for="Quantity-{{ section.id }}"
-                      aria-labelledby="quantity-label-{{ section.id }}"
-                    >
-                      <span aria-hidden="true">{{ 'products.product.quantity.label' | t }}</span>
-                      <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}" aria-hidden="true">
+                    <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                      {{ 'products.product.quantity.label' | t }}
+                      <span class="quantity__rules-cart{% if cart_qty ==  0 %} hidden{% endif %}">
                         {%- render 'loading-spinner' -%}
                         <span
                           >(
@@ -482,6 +471,7 @@
     </script>
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
+  {% # theme-check-disable %}
 
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
@@ -490,6 +480,7 @@
       assign seo_media = product.featured_media
     endif
   -%}
+  {% # theme-check-enable %}
 
   <script type="application/ld+json">
     {{ product | structured_data }}

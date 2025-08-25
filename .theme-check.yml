@@ -6,98 +6,98 @@ ignore:
   - .shopify/
 
 DeprecateBgsizes:
-  enabled: false
+  enabled: true
   severity: error
 DeprecateLazysizes:
-  enabled: false
+  enabled: true
   severity: error
 DeprecatedFilter:
-  enabled: false
+  enabled: true
   severity: error
 DeprecatedTag:
-  enabled: false
+  enabled: true
   severity: error
 ImgWidthAndHeight:
-  enabled: false
+  enabled: true
   severity: error
 JSONSyntaxError:
-  enabled: false
+  enabled: true
   severity: error
 LiquidHTMLSyntaxError:
-  enabled: false
+  enabled: true
   severity: error
 MatchingTranslations:
-  enabled: false
+  enabled: true
   severity: error
 MissingAsset:
-  enabled: false
+  enabled: true
   severity: error
 MissingTemplate:
-  enabled: false
+  enabled: true
   severity: error
 UnclosedHTMLElement:
-  enabled: false
+  enabled: true
   severity: warning
 UndefinedObject:
-  enabled: false
+  enabled: true
   severity: error
 UnusedAssign:
-  enabled: false
+  enabled: true
   severity: error
 ValidJSON:
-  enabled: false
+  enabled: true
   severity: error
 ValidSchema:
-  enabled: false
+  enabled: true
   severity: error
 VariableName:
-  enabled: false
+  enabled: true
   severity: error
   format: snake_case
 AssetPreload:
-  enabled: false
+  enabled: true
   severity: error
 CaptureOnContentForBlock:
-  enabled: false
+  enabled: true
   severity: error
 CdnPreconnect:
-  enabled: false
+  enabled: true
   severity: error
 ContentForHeaderModification:
-  enabled: false
+  enabled: true
   severity: error
 PaginationSize:
-  enabled: false
+  enabled: true
   severity: error
   minSize: 1
   maxSize: 50
 ParserBlockingScript:
-  enabled: false
+  enabled: true
   severity: error
 RemoteAsset:
-  enabled: false
+  enabled: true
   severity: warning
 RequiredLayoutThemeObject:
-  enabled: false
+  enabled: true
   severity: error
 TranslationKeyExists:
-  enabled: false
+  enabled: true
   severity: error
 UniqueStaticBlockId:
-  enabled: false
+  enabled: true
   severity: error
 UnknownFilter:
-  enabled: false
+  enabled: true
   severity: error
 ValidHTMLTranslation:
-  enabled: false
+  enabled: true
   severity: error
 ValidStaticBlockType:
-  enabled: false
+  enabled: true
   severity: error
 ValidBlockTarget:
-  enabled: false
+  enabled: true
   severity: error
 JSONMissingBlock:
-  enabled: false
+  enabled: true
   severity: error

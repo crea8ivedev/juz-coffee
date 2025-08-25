@@ -53,7 +53,7 @@
 
         {% assign scheme = settings.color_schemes | first %}
         --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        {% if scheme.settings.background_gradient != empty -%}
+        {% if scheme.settings.background_gradient !=  empty -%}
           --gradient-background: {{ scheme.settings.background_gradient }};
         {%- else -%}
           --gradient-background: {{ scheme.settings.background }};
@@ -70,7 +70,7 @@
         --color-soldout-badge-label: {{ badge_scheme.settings.text.red }},{{ badge_scheme.settings.text.green }},{{ badge_scheme.settings.text.blue }};
 
         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-        --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+        --page-width-margin: {% if settings.page_width ==  '1600' %}2{% else %}0{% endif %}rem;
 
         --buttons-radius: {{ settings.buttons_radius }}px;
         --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;

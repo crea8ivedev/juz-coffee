@@ -1,0 +1,115 @@
+{%- liquid
+  assign st = section.settings
+  assign enable_mobile_stickybar = st.enable_mobile_stickybar
+-%}
+<style>
+  body {
+    padding-bottom: 70px;
+  }
+</style>
+{%- if enable_mobile_stickybar -%}
+  <div class="bls__mobile-stickybar fixed bottom-0 left-0 right-0 z-[1000] bg-white py-9 {{ section.settings.extra_class_menus }}">
+    <div class="link-on-bottom">
+      <ul class="mobile-bottom-link flex justify-around items-center w-full">
+        {% for block in section.blocks %}
+          {% if block.settings.menu_url != blank %}
+            {% assign icon_type = block.settings.sselect_icon %}
+            <li>
+              <a href="{{ block.settings.menu_url }}" class="bls_tooltip flex flex-col items-center text-center">
+                {% if icon_type != blank %}
+                  <span class="picon-home block w-6 h-6">
+                    {% case icon_type %}
+                      {% when 'home' %}
+                        {{- 'icon-home.svg' | inline_asset_content -}}
+                      {% when 'wishlist' %}
+                        {{- 'icon-wishlist.svg' | inline_asset_content -}}
+                      {% when 'cart' %}
+                        {{- 'icon-cart.svg' | inline_asset_content -}}
+                      {% when 'notification' %}
+                        {{- 'icon-notification.svg' | inline_asset_content -}}
+                      {% when 'account' %}
+                        {{- 'icon-account.svg' | inline_asset_content -}}
+                    {% endcase %}
+                  </span>
+                {% endif %}
+                {% if block.settings.menu_title != blank %}
+                  <span class="bls_tooltip-content text-xs mt-1">{{ block.settings.menu_title }}</span>
+                {% endif %}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Mobile Stickybar",
+  "class": "mobile-stickybar-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "extra_class_menus",
+      "label": "Extra Class"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_stickybar",
+      "label": "Enable Mobile Stickybar",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Menus",
+      "name": "stickybar-menus",
+      "settings": [
+        {
+          "type": "url",
+          "label": "Menu URL",
+          "id": "menu_url"
+        },
+        {
+          "type": "select",
+          "label": "Select Icon",
+          "id": "sselect_icon",
+          "options": [
+            {
+              "label": "Home",
+              "value": "home"
+            },
+            {
+              "label": "Wishlist",
+              "value": "wishlist"
+            },
+            {
+              "label": "Cart",
+              "value": "cart"
+            },
+            {
+              "label": "Notification",
+              "value": "notification"
+            },
+            {
+              "label": "Account",
+              "value": "account"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "label": "Menu Title",
+          "id": "menu_title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mobile Stickybar"
+    }
+  ]
+}
+{% endschema %}

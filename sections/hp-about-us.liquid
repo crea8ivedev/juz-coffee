@@ -1,0 +1,240 @@
+<div class="{{ section.settings.extra_class }} about-us-main-hp py-90 max-lgscreen:py-60 max-mdscreen6:py-40 bg-cream">
+  <div
+    class="ctm-about-bg container_fluid"
+    style="background-image: url({{ section.settings.background_image | image_url }});"
+  >
+    <div class="flex items-center gap-60 max-smscreen:gap-[40px] max-lgscreen2:flex-col large_desktop_2:px-100">
+      <div class="about-head-icon-main lgscreen2:w-1/2 w-full">
+        <div class="lgscreen2:max-w-[700px]">
+          <div class="flex items-end gap-8">
+            {% if section.settings.caption_image != blank %}
+              <img
+                src="{{ section.settings.caption_image | image_url }}"
+                height="auto"
+                width="auto"
+                alt="Caption Image"
+                class="caption-img"
+              >
+            {% endif %}
+
+            {% if section.settings.caption_text != blank %}
+              <p class="text-primary-red leading-100p">{{ section.settings.caption_text }}</p>
+            {% endif %}
+          </div>
+
+          {% if section.settings.heading != blank %}
+            <div class="about-heading mt-12 text-black">{{ section.settings.heading }}</div>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div class="about-description mt-16 text-grey">{{ section.settings.description }}</div>
+          {% endif %}
+
+          <div class="beverage-icons mt-50 max-mdscreen2:mt-30 flex flex-col gap-26 mdscreen2:pr-50">
+            {% for block in section.blocks %}
+              {% if block.type == 'beverage_text' %}
+                <div class="beverage-block flex gap-20 items-start">
+                  <div class="w-auto">
+                    <div class="w-[60px] h-[60px] bg-primary-red inline-flex justify-center items-center p-[12px] object-contain rounded-full">
+                      {% if block.settings.beverage_icon != blank %}
+                        <img
+                          class="object-contain"
+                          src="{{ block.settings.beverage_icon | image_url }}"
+                          height="auto"
+                          width="auto"
+                          alt="Icon"
+                        >
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="w-[90%] flex flex-col gap-8">
+                    {% if block.settings.beverage_heading != blank %}
+                      <h4 class="text-primary-red">{{ block.settings.beverage_heading }}</h4>
+                    {% endif %}
+                    {% if block.settings.beverage_description != blank %}
+                      <div class="text-grey">{{ block.settings.beverage_description }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="flex items-center gap-50 mt-50 max-mdscreen2:mt-30 max-smscreen:flex-col max-smscreen:gap-[20px] max-smscreen:items-start">
+            {% if section.settings.about_btn_text and section.settings.about_btn_url %}
+              <a href="{{ section.settings.about_btn_url }}" class="ctm-button ctm-button-red">
+                {{ section.settings.about_btn_text }}
+              </a>
+            {% endif %}
+
+            {% if section.settings.video_play_button != blank %}
+              <div class="video-play flex gap-20 items-center">
+                <img
+                  src="{{ section.settings.video_play_button | image_url }}"
+                  height="auto"
+                  width="auto"
+                  alt="Play Button"
+                >
+                {% if section.settings.video_play_button_text %}
+                  <span>{{ section.settings.video_play_button_text }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="ctm-about-image w-[60%] lgscreen2:w-1/2 max-mdscreen8:w-full relative flex justify-end mdscreen2:ml-70">
+        <div class="ctm-about-hours-img relative max-mdscreen:pl-40">
+          <div class="ctm-about-hours bg-white rounded-[26px] max-mdscreen:rounded-[20px] shadow-[0px_4px_25.9px_0px_rgba(0,0,0,0.05)] absolute lgscreen2:-left-[180px] -left-[100px] lgscreen2:bottom-[95px] bottom-[20px] max-mdscreen8:-left-[50px] max-mdscreen4:left-0">
+            {% for block in section.blocks %}
+              {% if block.type == 'open_hours' %}
+                <div class="hours-block p-[30px] max-mdscreen6:p-[20px] max-smscreen:p-[10px]">
+                  <div class="bg-primary-red p-12 max-smscreen:p-8 inline-block rounded-full mb-0">
+                    {% if block.settings.clock_image != blank %}
+                      <img
+                        class="max-smscreen:w-[18px] max-smscreen:h-[18px]"
+                        src="{{ block.settings.clock_image | image_url }}"
+                        height="auto"
+                        width="auto"
+                        alt="Clock"
+                      >
+                    {% endif %}
+                  </div>
+                  {% if block.settings.open_hours_heading != blank %}
+                    <h4 class="text-primary-red mb-20 max-smscreen:mb-10 max-smscreen:text-14 max-smscreen:leading-normal">
+                      {{ block.settings.open_hours_heading }}
+                    </h4>
+                  {% endif %}
+                  {% if block.settings.open_hours_description != blank %}
+                    <div class="hours-block-table">{{ block.settings.open_hours_description }}</div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if section.settings.about_image != blank %}
+            <img
+              class="rounded-[320px_320px_10px_10px]"
+              src="{{ section.settings.about_image | image_url }}"
+              height="auto"
+              width="auto"
+              alt="About Image"
+            >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hp About Us",
+  "class": "ctm-hp-about-main",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Extra Class",
+      "id": "extra_class"
+    },
+    {
+      "type": "image_picker",
+      "label": "Background Image",
+      "id": "background_image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Caption Image",
+      "id": "caption_image"
+    },
+    {
+      "type": "text",
+      "label": "Caption Text",
+      "id": "caption_text"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description"
+    },
+    {
+      "type": "text",
+      "label": "About BTN Text",
+      "id": "about_btn_text"
+    },
+    {
+      "type": "url",
+      "label": "About BTN URL",
+      "id": "about_btn_url"
+    },
+    {
+      "type": "image_picker",
+      "label": "Video Play Button",
+      "id": "video_play_button"
+    },
+    {
+      "type": "text",
+      "label": "Video Play Button Text",
+      "id": "video_play_button_text"
+    },
+    {
+      "type": "image_picker",
+      "label": "About Image",
+      "id": "about_image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "beverage_text",
+      "name": "Beverage Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Beverage Icon",
+          "id": "beverage_icon"
+        },
+        {
+          "type": "text",
+          "label": "Beverage Heading",
+          "id": "beverage_heading"
+        },
+        {
+          "type": "richtext",
+          "label": "Beverage Description",
+          "id": "beverage_description"
+        }
+      ]
+    },
+    {
+      "type": "open_hours",
+      "name": "Open Hours",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Clock Image",
+          "id": "clock_image"
+        },
+        {
+          "type": "text",
+          "label": "Open Hours Heading",
+          "id": "open_hours_heading"
+        },
+        {
+          "type": "html",
+          "label": "Open Hours Description",
+          "id": "open_hours_description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hp About Us"
+    }
+  ]
+}
+{% endschema %}

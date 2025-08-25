@@ -1,0 +1,138 @@
+<section class="marquee-section bg-primary-red py-32 max-xl:py-20 overflow-hidden whitespace-nowrap {{ section.settings.extra_class }}">
+  <div class="marquee-wrapper relative flex">
+    <div class="marquee-track">
+      <!-- First content set -->
+      <div class="marquee-content flex">
+        {% for block in section.blocks %}
+          <div
+            class="marquee-item flex mdscreen:gap-x-14 items-center mdscreen:mr-14 gap-x-8 mr-8"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.image != blank %}
+              <div class="marquee-image mdscreen:w-[25px] mdscreen:h-[25px] w-[18px] h-[18px]">
+                <img
+                  src="{{ block.settings.image | image_url }}"
+                  alt="marquee image"
+                  height="auto"
+                  width="auto"
+                  class="w-full h-full rounded-10"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="marquee-text font-body text-white">
+                <h3 class="font-body font-medium">{{ block.settings.text }}</h3>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if section.settings.show_separator and forloop.index != section.blocks.size %}
+            <div class="separator w-[1px] h-40 bg-white mdscreen6:mx-20 mx-10 shrink-0"></div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Second content set (duplicate for infinite loop) -->
+      <div class="marquee-content flex" aria-hidden="true">
+        {% for block in section.blocks %}
+          <div
+            class="marquee-item flex mdscreen:gap-x-14 items-center mdscreen:mr-14 gap-x-8 mr-8"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.image != blank %}
+              <div class="marquee-image mdscreen:w-[25px] mdscreen:h-[25px] w-[18px] h-[18px]">
+                <img
+                  src="{{ block.settings.image | image_url }}"
+                  alt="marquee image"
+                  height="auto"
+                  width="auto"
+                  class="w-full h-full rounded-10"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="marquee-text font-body text-white">
+                <h3 class="font-body font-medium">{{ block.settings.text }}</h3>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if section.settings.show_separator and forloop.index != section.blocks.size %}
+            <div class="separator w-[1px] h-40 bg-white mdscreen6:mx-20 mx-10 shrink-0"></div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-track {
+    display: flex;
+    width: fit-content;
+    animation: marqueeScroll 30s linear infinite;
+  }
+
+  .marquee-content {
+    display: flex;
+  }
+
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-section {
+    overflow: hidden;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Marquee",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Extra Class",
+      "id": "extra_class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Marquee Item",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_separator",
+          "label": "Show separator between items",
+          "default": false
+        },
+
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Sample text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "category": "Custom",
+      "blocks": [{ "type": "item" }, { "type": "item" }, { "type": "item" }]
+    }
+  ]
+}
+{% endschema %}

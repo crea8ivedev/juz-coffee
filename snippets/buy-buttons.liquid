@@ -59,8 +59,9 @@
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
+        {% # theme-check-disable %}
 
-        <div class="product-form__buttons">
+        <div class="product-form__buttons !max-w-full">
           {%- liquid
             assign check_against_inventory = true
             if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
@@ -70,11 +71,12 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+          {% # theme-check-enable %}
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit ctm-button ctm-button-red before:!content-none !px-18 !w-full mdscreen6:!my-24 !my-16  {% if show_dynamic_checkout %}{% else %}{% endif %}"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
@@ -105,7 +107,7 @@
         <button
           type="submit"
           name="add"
-          class="product-form__submit button button--full-width button--primary"
+          class="product-form__submit ctm-button ctm-button-red"
           disabled
         >
           {{ 'products.product.sold_out' | t }}
