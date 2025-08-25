@@ -8,7 +8,7 @@
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
 
-  {%- if section.settings.image_height == 'adapt-image' and section.settings.image != blank -%}
+  {%- if section.settings.image_height ==  'adapt-image' and section.settings.image !=  blank -%}
     @media screen and (max-width: 749px) {
       #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
         padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
@@ -28,10 +28,10 @@
 
 <div
   id="Banner-{{ section.id }}"
-  class="email-signup-banner banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.image_height == 'adapt-image' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}"
+  class="email-signup-banner banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.image_height ==  'adapt-image' and section.settings.image !=  blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box ==  false %} banner--desktop-transparent{% endif %}"
 >
   {%- if section.settings.show_background_image -%}
-    <div class="banner__media{% if section.settings.image != blank %} media{% endif %}">
+    <div class="banner__media{% if section.settings.image !=  blank %} media{% endif %}">
       {%- if section.settings.image != blank -%}
         <img
           srcset="
@@ -59,7 +59,7 @@
     </div>
   {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
-    <div class="email-signup-banner__box banner__box newsletter newsletter__wrapper isolate{% if section.settings.show_background_image == false %} email-signup-banner__box--no-image{% endif %} content-container color-{{ section.settings.color_scheme }} gradient content-container--full-width-mobile">
+    <div class="email-signup-banner__box banner__box newsletter newsletter__wrapper isolate{% if section.settings.show_background_image ==  false %} email-signup-banner__box--no-image{% endif %} content-container color-{{ section.settings.color_scheme }} gradient content-container--full-width-mobile">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
@@ -160,7 +160,7 @@
       "id": "show_background_image",
       "label": "t:sections.email-signup-banner.settings.show_background_image.label",
       "default": true
-    },    
+    },
     {
       "type": "image_picker",
       "id": "image",
@@ -203,7 +203,7 @@
     {
       "type": "header",
       "content": "t:sections.email-signup-banner.settings.content_header.content"
-    },    
+    },
     {
       "type": "select",
       "id": "desktop_content_position",
@@ -267,7 +267,7 @@
       ],
       "default": "center",
       "label": "t:sections.email-signup-banner.settings.desktop_content_alignment.label"
-    },    
+    },
     {
       "type": "checkbox",
       "id": "show_text_box",

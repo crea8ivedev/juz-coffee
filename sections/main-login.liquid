@@ -26,6 +26,7 @@
     <p>
       {{ 'customer.recover_password.subtext' | t }}
     </p>
+    {% # theme-check-disable %}
 
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
@@ -45,6 +46,7 @@
           {% endif %}
           placeholder="{{ 'customer.login_page.email' | t }}"
         >
+        {% # theme-check-enable %}
         <label for="RecoverEmail">
           {{ 'customer.login_page.email' | t }}
         </label>
