@@ -12,6 +12,13 @@
     "hero_banner_VjiGJG": {
       "type": "hero-banner",
       "blocks": {
+        "text_content_QQ7pAe": {
+          "type": "text_content",
+          "settings": {
+            "banner": "<p>cxzcz</p>",
+            "description": ""
+          }
+        },
         "coffee_mug_TXzYFW": {
           "type": "coffee_mug",
           "settings": {
@@ -42,6 +49,7 @@
         }
       },
       "block_order": [
+        "text_content_QQ7pAe",
         "coffee_mug_TXzYFW",
         "text_content_EKyt3E",
         "shop_button_RfnXrx",
