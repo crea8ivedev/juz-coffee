@@ -1,184 +1,53 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "download_apps_FC3kgT": {
-      "type": "download-apps",
-      "disabled": true,
-      "name": "Download Apps",
-      "settings": {
-        "extra_class": "",
-        "red_coffee_cup": "shopify://shop_images/Red_cup.svg",
-        "decorate_cup": "shopify://shop_images/Image_96f862f4-4a1f-49a9-a302-9d1cf4ee17af.png",
-        "coffee_cup_text": "Coffee At Your Fingertips",
-        "heading": "<h2>Download our mobile app</h2>",
-        "desciption": "<p>Stay connected with Roast wherever you go. With our mobile app, you can browse the menu,place orders, schedule pickups, and enjoy exclusive rewards all from the convenience of yourphone. Download and bring your favorite coffee.</p>",
-        "app_store_text": "App Store",
-        "app_store_url": "#",
-        "google_play_text": "Google Play",
-        "google_play_url": "#"
-      }
-    },
-    "mobile_headermenu_bottom_TifQyQ": {
-      "type": "mobile-headermenu-bottom",
-      "blocks": {
-        "menus_7W3WU6": {
-          "type": "Menus",
-          "settings": {
-            "menu_url": "#",
-            "sselect_icon": "home",
-            "menu_title": ""
-          }
-        },
-        "menus_Nz9px4": {
-          "type": "Menus",
-          "settings": {
-            "menu_url": "#",
-            "sselect_icon": "wishlist",
-            "menu_title": ""
-          }
-        },
-        "menus_G3Arhj": {
-          "type": "Menus",
-          "settings": {
-            "menu_url": "https://jp7300.myshopify.com/cart",
-            "sselect_icon": "cart",
-            "menu_title": ""
-          }
-        },
-        "menus_PqEcGc": {
-          "type": "Menus",
-          "settings": {
-            "menu_url": "#",
-            "sselect_icon": "notification",
-            "menu_title": ""
-          }
-        },
-        "menus_b99NH9": {
-          "type": "Menus",
-          "disabled": true,
-          "settings": {
-            "menu_url": "#",
-            "sselect_icon": "home",
-            "menu_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "menus_7W3WU6",
-        "menus_Nz9px4",
-        "menus_G3Arhj",
-        "menus_PqEcGc",
-        "menus_b99NH9"
-      ],
-      "name": "Mobile Stickybar",
-      "settings": {
-        "extra_class_menus": "",
-        "enable_mobile_stickybar": true
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter_TaQUBx": {
-          "type": "newsletter",
-          "settings": {
-            "newsletter_heading_block": "Sign up for exclusive updates and offers",
-            "show_social_media_icons": true
-          }
-        },
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Information",
-            "menu": "information"
+            "heading": "Quick links",
+            "menu": "footer"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Categories",
-            "menu": "categories-1"
-          }
-        },
-        "footer_social_aagjVx": {
-          "type": "footer-social",
-          "settings": {
-            "extra_class": "ctm-social-mobile",
-            "show_social_media_icons_footer": true
+            "heading": "Info",
+            "menu": "footer"
           }
         },
         "footer-2": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "footer-block-image": "shopify://shop_images/SVG.svg",
-            "heading": "<strong>CONTACT US</strong>",
-            "subtext": "<p>T. +123 456 789M.<br/>info@domainname.com</p>",
-            "footer-block-btn-text": "Contact Us",
-            "footer-block-btn-url": "shopify://pages/contact"
-          }
-        },
-        "text_AJiMLK": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "footer-block-image": "shopify://shop_images/SVG_1.svg",
-            "heading": "<strong>ADDRESS</strong>",
-            "subtext": "<p>29721 Westheimer Road, Santa Ana,<br/>Illinois 85486</p>",
-            "footer-block-btn-text": "Get Direction",
-            "footer-block-btn-url": "shopify://pages/test"
-          }
-        },
-        "text_L4GwNE": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "footer-block-image": "shopify://shop_images/SVG_2.svg",
-            "heading": "<strong>OPENING HOURS</strong>",
-            "subtext": "<p>Everyday: From 12.30 To 23.00<br/>Kitchen Closes At 22.00</p>",
-            "footer-block-btn-text": "Reserve A Table",
-            "footer-block-btn-url": "shopify://pages/test"
+            "heading": "Our mission",
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
           }
         }
       },
       "block_order": [
-        "newsletter_TaQUBx",
         "footer-0",
         "footer-1",
-        "footer_social_aagjVx",
-        "footer-2",
-        "text_AJiMLK",
-        "text_L4GwNE"
+        "footer-2"
       ],
       "settings": {
-        "color_scheme": "scheme-3758ed03-3aa1-4369-947b-14fe1c59f82d",
-        "newsletter_enable": false,
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": false,
-        "margin_top": 0,
-        "padding_top": 72,
-        "padding_bottom": 24
+        "margin_top": 48,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "download_apps_FC3kgT",
-    "mobile_headermenu_bottom_TifQyQ",
     "footer"
   ]
 }

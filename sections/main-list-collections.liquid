@@ -5,8 +5,6 @@
   <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ section.settings.title }}
   </h1>
-  {% # theme-check-disable %}
-
   {%- liquid
     case section.settings.sort
       when 'products_high', 'products_low'
@@ -25,7 +23,6 @@
       assign paginate_by = 28
     endif
   -%}
-  {% # theme-check-enable %}
   {%- paginate collections by paginate_by -%}
     <ul
       class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"

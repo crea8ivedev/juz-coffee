@@ -74,18 +74,14 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
-    <div class="product ctm-main-product max-mdscreen2:flex-col product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
-        {% if section.settings.enable_slider %}
-          {% render 'ctm-product-media-gallery' %}
-        {% else %}
-          {% render 'product-media-gallery', variant_images: variant_images %}
-        {% endif %}
+        {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
-      <div class="product__info-wrapper !p-0 mdscreen2:!pl-40 desktop:!pl-[52px] max-mdscreen2:mt-[45px] max-mdscreen6:mt-30 grid__item{% if settings.page_width > 1400 and section.settings.media_size ==  "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
           id="ProductInfo-{{ section.id }}"
-          class="product__info-container !max-w-full {% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+          class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -95,14 +91,14 @@
                 {% render block %}
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style ==  'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style ==  'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1 class="h2 text-black">{{ product.title | escape }}</h1>
+                  <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
@@ -146,7 +142,7 @@
                 </div>
               {%- when 'inventory' -%}
                 <p
-                  class="product__inventory{% if block.settings.text_style ==  'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style ==  'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management !=  'shopify' %} visibility-hidden{% endif %}"
+                  class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
                   {{ block.shopify_attributes }}
                   id="Inventory-{{ section.id }}"
                   role="status"
@@ -203,7 +199,7 @@
                 {%- endif -%}
               {%- when 'sku' -%}
                 <p
-                  class="product__sku{% if block.settings.text_style ==  'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style ==  'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size ==  0 %} visibility-hidden{% endif %}"
+                  class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
                   id="Sku-{{ section.id }}"
                   role="status"
                   {{ block.shopify_attributes }}
@@ -234,7 +230,7 @@
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
-                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset !=  0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -243,9 +239,20 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
-                    {{ 'products.product.quantity.label' | t }}
-                    <span class="quantity__rules-cart{% if cart_qty ==  0 %} hidden{% endif %}">
+                  <span class="visually-hidden" id="quantity-label-{{ section.id }}">
+                    {%- if cart_qty > 0 -%}
+                      {{- 'products.product.quantity.in_cart_aria_label' | t: quantity: cart_qty -}}
+                    {%- else -%}
+                      {{- 'products.product.quantity.label' | t -}}
+                    {%- endif -%}
+                  </span>
+                  <label
+                    class="quantity__label form__label"
+                    for="Quantity-{{ section.id }}"
+                    aria-labelledby="quantity-label-{{ section.id }}"
+                  >
+                    <span aria-hidden="true">{{ 'products.product.quantity.label' | t }}</span>
+                    <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}" aria-hidden="true">
                       {%- render 'loading-spinner' -%}
                       <span
                         >(
@@ -470,21 +477,6 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-
-              {%- when 'product_icon_text' -%}
-                <div class="ctm-icon-text-product">
-                  <img
-                    src="{{ product.metafields.custom.pdp_icon_text.value.icon | image_url }}"
-                    height="auto"
-                    width="auto"
-                    alt="icon"
-                  >
-                  <p>{{ product.metafields.custom.pdp_icon_text.value.text }}</p>
-                </div>
-
-              {%- when 'product_tabs' -%}
-                {% render 'product-tabs' %}
-
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -569,7 +561,6 @@
                             | divided_by: block.settings.products_per_page
                             | ceil
                           -%}
-                          {% # theme-check-disable %}
                           <div
                             id="Slider-{{ block.id }}"
                             class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere"
@@ -595,7 +586,6 @@
                                     limit: block.settings.products_per_page
                                     offset: continue
                                   -%}
-                                    {% # theme-check-enable %}
                                     <li>
                                       {%- if block.settings.enable_quick_add -%}
                                         {% assign quick_add = 'standard' %}
@@ -632,7 +622,7 @@
                                   {{- 'icon-caret.svg' | inline_asset_content -}}
                                 </span>
                               </button>
-                              <div class="slider-counter slider-counter--{{ block.settings.pagination_style }}{% if block.settings.pagination_style ==  'counter' or block.settings.pagination_style ==  'numbers' %} caption{% endif %}">
+                              <div class="slider-counter slider-counter--{{ block.settings.pagination_style }}{% if block.settings.pagination_style == 'counter' or block.settings.pagination_style == 'numbers' %} caption{% endif %}">
                                 {%- if block.settings.pagination_style == 'counter' -%}
                                   <span class="slider-counter--current">1</span>
                                   <span aria-hidden="true"> / </span>
@@ -733,7 +723,6 @@
       </script>
       <script src="{{ 'product-model.js' | asset_url }}" defer></script>
     {%- endif -%}
-    {% # theme-check-disable %}
 
     {%- liquid
       if product.selected_or_first_available_variant.featured_media
@@ -742,7 +731,7 @@
         assign seo_media = product.featured_media
       endif
     -%}
-    {% # theme-check-enable %}
+
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
@@ -938,16 +927,6 @@
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
         }
       ]
-    },
-    {
-      "type": "product_icon_text",
-      "name": "Product Icon Text",
-      "settings": []
-    },
-    {
-      "type": "product_tabs",
-      "name": "Product Tabs",
-      "settings": []
     },
     {
       "type": "description",
@@ -2110,11 +2089,6 @@
     }
   ],
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "enable_slider",
-      "label": "Enable slider on media gallery"
-    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

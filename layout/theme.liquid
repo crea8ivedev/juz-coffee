@@ -28,7 +28,6 @@
 
     {% render 'meta-tags' %}
 
-    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
@@ -54,17 +53,15 @@
       {{ body_font_italic | font_face: font_display: 'swap' }}
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
-        {% # theme-check-disable %}
 
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
-        {% if forloop.index ==  1 -%}
+        {% if forloop.index == 1 -%}
           :root,
         {%- endif %}
-        {% # theme-check-enable %}
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        {% if scheme.settings.background_gradient !=  empty %}
+        {% if scheme.settings.background_gradient != empty %}
           --gradient-background: {{ scheme.settings.background_gradient }};
         {% else %}
           --gradient-background: {{ scheme.settings.background }};
@@ -126,7 +123,7 @@
         --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
 
         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-        --page-width-margin: {% if settings.page_width ==  '1600' %}2{% else %}0{% endif %}rem;
+        --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
         --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
         --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
@@ -211,7 +208,7 @@
         --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
         --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
         --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
-        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset !=  0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
+        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
         --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
         --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
         --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
@@ -258,7 +255,6 @@
       }
     {% endstyle %}
 
-    {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -269,12 +265,6 @@
       {{ 'component-price.css' | asset_url | stylesheet_tag }}
       {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-
-    {% comment %} inter font {% endcomment %}
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    >
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
@@ -306,23 +296,9 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    <!-- Swiper CSS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    >
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      async
-    ></script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements !=  'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} ctm_{{ page.handle }} ctm_{{ product.handle }} ctm_{{ template.suffix }}">
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
